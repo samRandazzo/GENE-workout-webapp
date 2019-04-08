@@ -23,6 +23,26 @@ public class UserController {
 	public UserController(UserDAO userDAO) {
 		this.userDAO = userDAO;
 	}
+	
+	@RequestMapping(path="home", method=RequestMethod.GET)
+	public String displayHome() {
+		return "home";
+	}
+	
+	@RequestMapping(path="leaderboard", method=RequestMethod.GET)
+	public String displayLeaderboard() {
+		return "leaderboard";
+	}
+	
+	@RequestMapping(path="donations", method=RequestMethod.GET)
+	public String displayDonations() {
+		return "donations";
+	}
+	
+	@RequestMapping(path="shop", method=RequestMethod.GET)
+	public String displayShop() {
+		return "shop";
+	}
 
 	@RequestMapping(path="/users/new", method=RequestMethod.GET)
 	public String displayNewUserForm(ModelMap modelHolder) {
@@ -39,7 +59,6 @@ public class UserController {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
 			return "redirect:/users/new";
 		}
-		
 		userDAO.saveUser(user.getUserName(), user.getPassword());
 		return "redirect:/login";
 	}

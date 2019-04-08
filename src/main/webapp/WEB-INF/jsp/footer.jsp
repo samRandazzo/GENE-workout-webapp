@@ -1,7 +1,7 @@
 		</div>
 		
 		<footer>
-			Copyright 2016 Critter Inc.
+			GENE | &copy; 2019
 		</footer>
 	</body>
 </html>
