@@ -63,5 +63,10 @@ public class UserController {
 		return "redirect:/home";
 	}
 	
+	@RequestMapping(path="profile", method=RequestMethod.GET)
+	public String displayProfilePage() {
+		return "profile";
+	}
+	
 	
 }
