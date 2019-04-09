@@ -1,4 +1,17 @@
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+footer {
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
 #text-logo,
+#sub-title-logo,
 #footer-text-logo,
 #copyright-text-logo {
 	font-family: 'Black Ops One', cursive;	
@@ -9,6 +22,7 @@
 }
 #footer-text-logo {
 	font-size: 2em;
+	padding-left: 15px;
 }
 #copyright-text-logo {
 	font-size: 1em;
@@ -21,9 +35,16 @@ footer {
 	background-color: #363636;
 	color: #fff;
 }
-.footer-nav li {
+.footer-nav-item {
+	display: block;
 	text-align: center;
+	margin: 0 auto;
+	color: #fff;
+}
+footer a:hover {
+	color: #ffdd57;	
 }
 #copyright {
+	padding-top: 15px;
 	text-align: center;
 }
