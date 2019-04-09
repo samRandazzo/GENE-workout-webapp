@@ -5,15 +5,18 @@
 		<p id = "footer-text-logo">GENE</p>
 		<nav id = "footer-nav">
 			<ul>
-				<li><a class = "footer-nav-item"
+				<li>
+					<a class = "footer-nav-item"
 						href = "<c:url value = "/home"/>">Home
 					</a>
 				</li>
-				<li><a class = "footer-nav-item"
+				<li>
+					<a class = "footer-nav-item"
 						href = "<c:url value = "/leaderboard"/>">Leaderboard
 					</a>
 				</li>
-				<li><a class = "footer-nav-item"
+				<li>
+					<a class = "footer-nav-item"
 						href = "<c:url value = "/shop"/>">Shop
 					</a>
 				</li>
