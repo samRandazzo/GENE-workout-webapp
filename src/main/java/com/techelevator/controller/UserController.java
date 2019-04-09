@@ -52,15 +52,20 @@ public class UserController {
 		return "newUser";
 	}
 	
-	@RequestMapping(path="/users", method=RequestMethod.POST)
+	@RequestMapping(path="/signUp", method=RequestMethod.POST)
 	public String createUser(@Valid @ModelAttribute User user, BindingResult result, RedirectAttributes flash) {
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
-			return "redirect:/users/new";
+			return "redirect:/signup";
 		}
 		userDAO.saveUser(user.getUserName(), user.getPassword());
-		return "redirect:/login";
+		return "redirect:/home";
+	}
+	
+	@RequestMapping(path="profile", method=RequestMethod.GET)
+	public String displayProfilePage() {
+		return "profile";
 	}
 	
 	
