@@ -29,6 +29,11 @@ public class UserController {
 		return "home";
 	}
 	
+	@RequestMapping(path="/howItWorks", method=RequestMethod.GET)
+	public String getHowItWorks() {
+		return "howItWorks";
+	}
+	
 	@RequestMapping(path="leaderboard", method=RequestMethod.GET)
 	public String displayLeaderboard() {
 		return "leaderboard";

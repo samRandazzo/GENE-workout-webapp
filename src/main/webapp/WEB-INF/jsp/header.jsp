@@ -37,6 +37,10 @@
 	              Home
 	            </a>
 	            <a class="navbar-item"
+	               href = "<c:url value = "/howItWorks"/>">
+	              How it works
+	            </a>
+	            <a class="navbar-item"
 	               href = "<c:url value = "leaderboard"/>">
 	              Leaderboard
 	            </a>

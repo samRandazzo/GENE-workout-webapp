@@ -6,6 +6,9 @@ body {
 	display: grid;
 	grid-template-rows: 1fr auto;
 }
+#about-us {
+	background: #666 url("img/phbr1.jpg") no-repeat center cover;
+}
 footer {
 	grid-row-start: 2;
 	grid-row-end: 3;
