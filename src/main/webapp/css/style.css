@@ -1,0 +1,29 @@
+#text-logo,
+#footer-text-logo,
+#copyright-text-logo {
+	font-family: 'Black Ops One', cursive;	
+	color: #ffdd57;
+}
+#text-logo {
+	font-size: 3em;
+}
+#footer-text-logo {
+	font-size: 2em;
+}
+#copyright-text-logo {
+	font-size: 1em;
+}
+#login-username {
+	margin: 0 10px;
+}
+footer {
+	width: 100%;
+	background-color: #363636;
+	color: #fff;
+}
+.footer-nav li {
+	text-align: center;
+}
+#copyright {
+	text-align: center;
+}

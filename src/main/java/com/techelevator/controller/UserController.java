@@ -24,8 +24,8 @@ public class UserController {
 		this.userDAO = userDAO;
 	}
 	
-	@RequestMapping(path="home", method=RequestMethod.GET)
-	public String displayHome() {
+	@RequestMapping(path="/home", method=RequestMethod.GET)
+	public String getHome() {
 		return "home";
 	}
 	
