@@ -2,6 +2,47 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<p>Homepage test text</p>
+<section class = "section">
+	<div class = "container">
+		<h1 class = "title">About Us</h1>
+		<h2 class = "subtitle">Workout. Donate. <span id = "sub-title-logo">GENE</span></h2>
+		<p>Maecenas a diam semper mauris luctus volutpat. Pellentesque ac orci erat. Sed id lacus nunc. 
+		Donec justo erat, aliquet a enim vitae, consequat venenatis nunc. Maecenas ut molestie tortor. 
+		Ut eget turpis mi. Mauris luctus lectus et luctus scelerisque. Nulla a ligula convallis, suscipit 
+		quam non, mollis quam. Nam eu facilisis massa, non hendrerit tellus. Sed sed nunc ligula. Donec vitae 
+		diam ut sapien interdum tempus. Vivamus quis suscipit augue. Quisque egestas aliquam convallis. 
+		Aliquam sed congue purus. </p>
+	</div>
+</section>
+
+<section id = "contact-form" class = "section">
+	<div class = "container">
+		<h1 class = "title">Contact Us</h1>
+		<div class = "field">
+			<label class = "label">Name</label>
+			<div class = "control">
+				<input class = "input is-warning" type = "text" placeholder = "Name">
+			</div>
+		</div>
+		<div class = "field">
+			<label class = "label">Email</label>
+			<div class = "control">
+				<input class = "input is-warning" type = "email" placeholder = "Email address">
+			</div>
+		</div>
+		<div class = "field">
+			<label class = "label">Subject</label>
+			<div class = "control">
+				<input class = "input is-warning" type = "text" placeholder = "Subject">
+			</div>
+		</div>
+		<div class = "field">
+			<label class = "label">Message</label>
+			<div class = "control">
+				<textarea class = "textarea is-warning" type = "text" placeholder = "Message"></textarea>
+			</div>
+		</div>
+	</div>
+</section>
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
