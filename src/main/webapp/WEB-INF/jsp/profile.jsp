@@ -9,9 +9,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Profile</title>
 </head>
 <body>
-
+<h2>Welcome, user</h2>
 </body>
 </html>
