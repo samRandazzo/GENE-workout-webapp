@@ -15,6 +15,24 @@
 	</div>
 </section>
 
+<section id = "carousel" class="section">
+	<div class="container">
+		<!-- Start Carousel -->
+		<div id="carousel-demo" class="carousel autoplay">
+			<div class="item-1 carousel-item">
+				<img src = "img/phbr1.jpg">
+			</div>
+			<div class="item-2 carousel-item">
+				<img src = "img/phbr2.jpg">
+			</div>
+			<div class="item-3 carousel-item">
+				<img src = "img/phbr3.jpg">
+			</div>
+		</div>
+		<!-- End Carousel -->
+	</div>
+</section>
+
 <section id = "contact-form" class = "section">
 	<div class = "container">
 		<h1 class = "title">Contact Us</h1>

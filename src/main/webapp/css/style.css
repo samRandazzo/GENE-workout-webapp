@@ -10,6 +10,9 @@ footer {
 	grid-row-start: 2;
 	grid-row-end: 3;
 }
+.carousel-item {
+	width: 100vw;
+}
 #text-logo,
 #sub-title-logo,
 #footer-text-logo,
