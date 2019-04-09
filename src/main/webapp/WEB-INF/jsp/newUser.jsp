@@ -2,6 +2,9 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+<h1>New User Sign Up</h1>
+<br>
+
 <script type="text/javascript">
 	$(document).ready(function () {
 		$.validator.addMethod('capitals', function(thing){
@@ -46,17 +49,24 @@
 			<div class="form-group">
 				<label for="userName">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
-			</div>
+			</div><br>
 			<div class="form-group">
 				<label for="password">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
-			</div>
+			</div><br>
 			<div class="form-group">
 				<label for="confirmPassword">Confirm Password: </label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
-			</div>
+			</div><br>
+			<div class="form-group">
+				<label for="veteranStatus">Are you a veteran?</label>
+					<p>
+					<input type="radio" name="yes_no" checked>Yes</input>
+					<input type="radio" name="yes_no">No</input>
+					</p>
+			</div><br>
 			<button type="submit" class="btn btn-primary">Create User</button>
-		</div>
+		</div><br>
 		<div class="col-sm-4"></div>
 	</div>
 </form>

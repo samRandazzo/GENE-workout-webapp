@@ -51,7 +51,7 @@
 	              <input id = "login-password" class = "input is-small is-warning" type = "password" placeholder = "password"/>
 	            </span>
 	            <a class="navbar-item"
-	            	href = "<c:url value = "/newUser"/>">
+	            	href = "<c:url value = "signUp"/>">
 	              Sign Up
 	            </a>
 	          </div>

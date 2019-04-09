@@ -44,8 +44,8 @@ public class UserController {
 		return "shop";
 	}
 
-	@RequestMapping(path="/users/new", method=RequestMethod.GET)
-	public String displayNewUserForm(ModelMap modelHolder) {
+	@RequestMapping(path="signUp", method=RequestMethod.GET)
+	public String displaySignUpForm(ModelMap modelHolder) {
 		if( ! modelHolder.containsAttribute("user")) {
 			modelHolder.addAttribute("user", new User());
 		}
