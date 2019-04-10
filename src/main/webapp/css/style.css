@@ -66,3 +66,11 @@ footer a:hover {
 #copyright-text-logo {
 	font-size: 1em;
 }
+#tile-wrapper{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+#profile-picture{
+	align: center;
+}
