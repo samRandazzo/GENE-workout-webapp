@@ -2,6 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+<<<<<<< HEAD
 <!-- <<<<<<< HEAD -->
 <!-- <p>
 YOU WORKOUT. WE DONATE
@@ -29,6 +30,35 @@ more accountable for the way our veterans are being treated. All you need to do 
 		<p>DO THE WORKOUT OF THE DAY </p>
 		<p>ONCE COMPLETED WE DONATE $$$ TO A VETERAN ORGANIZATION</p>
 		<p>REPEAT TOMORROW</p>
+=======
+<section id = "about-us" class = "section">
+	<div class = "container">
+		<h1 class = "title">YOU Workout. WE Donate.</h1>
+		<p>Maecenas a diam semper mauris luctus volutpat. Pellentesque ac orci erat. Sed id lacus nunc. 
+		Donec justo erat, aliquet a enim vitae, consequat venenatis nunc. Maecenas ut molestie tortor. 
+		Ut eget turpis mi. Mauris luctus lectus et luctus scelerisque. Nulla a ligula convallis, suscipit 
+		quam non, mollis quam. Nam eu facilisis massa, non hendrerit tellus. Sed sed nunc ligula. Donec vitae 
+		diam ut sapien interdum tempus. Vivamus quis suscipit augue. Quisque egestas aliquam convallis. 
+		Aliquam sed congue purus. </p>
+>>>>>>> e886d7323b1b0352ea61108e15f9a8c295587ff5
+	</div>
+</section>
+
+<section id = "carousel" class="section">
+	<div class="container">
+		<!-- Start Carousel -->
+		<div id="carousel-demo" class="carousel autoplay">
+			<div class="item-1 carousel-item">
+				<img src = "img/phbr1.jpg">
+			</div>
+			<div class="item-2 carousel-item">
+				<img src = "img/phbr2.jpg">
+			</div>
+			<div class="item-3 carousel-item">
+				<img src = "img/phbr3.jpg">
+			</div>
+		</div>
+		<!-- End Carousel -->
 	</div>
 </section>
 

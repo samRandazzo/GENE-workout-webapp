@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">    
    	<link href = "css/style.css" rel="stylesheet" type="text/css">
    	<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css" rel="stylesheet" type="text/css">
+   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
 </head>
 <body>
 <div id = "wrapper">
@@ -38,6 +39,10 @@
 	             <a class="navbar-item"
 	               href = "<c:url value = "community"/>">
 	              Community 
+	            </a>
+	            <a class="navbar-item"
+	               href = "<c:url value = "/howItWorks"/>">
+	              How it works
 	            </a>
 	            <a class="navbar-item"
 	               href = "<c:url value = "leaderboard"/>">
