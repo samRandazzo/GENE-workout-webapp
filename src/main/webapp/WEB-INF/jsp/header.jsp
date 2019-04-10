@@ -44,7 +44,7 @@
 	              Shop
 	            </a>
 	            <span class="navbar-item">
-	              <a href = "<c:url value = "/profile"/>">
+	              <a href = "<c:url value = "profile"/>">
 	              	<input type = "button" type = "submit" value = "Log In" class="button is-warning">
 	              </a>
 	              <input id = "login-username" class = "input is-small is-warning" type = "text" placeholder = "username"/>
