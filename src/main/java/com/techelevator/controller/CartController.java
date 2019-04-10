@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.techelevator.model.Item;
+import com.techelevator.model.ProductModel;
 
 @Controller
 @RequestMapping(value ="cart")
@@ -23,11 +24,14 @@ public class CartController {
 	
 	@RequestMapping(value = "buy/{id}", method = RequestMethod.GET)
 	public String buy(@PathVariable("id") String id, HttpSession session) {
+		ProductModel productModel = new ProductModel();
 		if (session.getAttribute("cart") == null) {
 			List<Item> cart = new ArrayList<Item>();
 			cart.add(new Item(productModel.find(id), 1));
 			session.setAttribute("cart", cart);
 		}else {
+			List<Item> cart = (List<Item>) session.getAttribute("cart");
+			int index = this.exists(id, cart);
 			int quantity = cart.get(index).getQuantity()+1;
 			cart.get(index).setQuantity(quantity);
 		}
