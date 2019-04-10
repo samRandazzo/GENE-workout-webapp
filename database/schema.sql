@@ -30,13 +30,14 @@ total_donated bigint
 );
 
 CREATE TABLE shop (
-
+item VARCHAR(64),
+quanity INT,
+price FLOAT,
 );
 
 CREATE TABLE exercises (
-
+name_of_exercise VARCHAR(64),
+category VARCHAR(64)
 );
-
-
 
 COMMIT;
