@@ -14,9 +14,9 @@
 	</div>
 </section>
 
-<section id = "carousel" class="section">
+<!-- <section id = "carousel" class="section">
 	<div class="container">
-		<!-- Start Carousel -->
+		Start Carousel
 		<div id="carousel-demo" class="carousel autoplay">
 			<div class="item-1 carousel-item">
 				<img src = "img/phbr1.jpg">
@@ -28,15 +28,15 @@
 				<img src = "img/phbr3.jpg">
 			</div>
 		</div>
-		<!-- End Carousel -->
+		End Carousel
 	</div>
-</section>
+</section> -->
 
 <section id = "contact-form" class = "section">
 	<div class = "container">
-		<h1 class = "title">Contact Us</h1>
+		<h1 class = "title is-white">Contact Us</h1>
 		<div class = "field">
-			<label class = "label">Name</label>
+			<label class = "label is-warning">Name</label>
 			<div class = "control">
 				<input class = "input is-warning" type = "text" placeholder = "Name">
 			</div>

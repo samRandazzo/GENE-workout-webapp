@@ -6,16 +6,6 @@ body {
 	display: grid;
 	grid-template-rows: 1fr auto;
 }
-#about-us {
-	background: #666 url("img/phbr1.jpg") no-repeat center cover;
-}
-footer {
-	grid-row-start: 2;
-	grid-row-end: 3;
-}
-.carousel-item {
-	width: 100vw;
-}
 #text-logo,
 #sub-title-logo,
 #footer-text-logo,
@@ -26,20 +16,42 @@ footer {
 #text-logo {
 	font-size: 3em;
 }
+#login-username {
+	margin: 0 10px;
+}
+#about-us {
+	min-height: 400px;
+	background-image: url("../img/phbr2.jpg");	
+	background-position: center;
+}
+#about-us h1 {
+	color: #fff;
+}
+#about-us .container {
+	padding-top: 50px;
+}
+#contact-form {
+	background-image: url("../img/phbr2.jpg");	
+}
+
+#contact-form .input {
+	width: 50%;
+}
+footer {
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
 #footer-text-logo {
 	font-size: 2em;
 	padding-left: 15px;
-}
-#copyright-text-logo {
-	font-size: 1em;
-}
-#login-username {
-	margin: 0 10px;
 }
 footer {
 	width: 100%;
 	background-color: #363636;
 	color: #fff;
+}
+footer a:hover {
+	color: #ffdd57;	
 }
 .footer-nav-item {
 	display: block;
@@ -47,10 +59,10 @@ footer {
 	margin: 0 auto;
 	color: #fff;
 }
-footer a:hover {
-	color: #ffdd57;	
-}
 #copyright {
 	padding-top: 15px;
 	text-align: center;
+}
+#copyright-text-logo {
+	font-size: 1em;
 }
