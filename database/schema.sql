@@ -15,4 +15,28 @@ CREATE TABLE app_user (
   salt varchar(255) NOT NULL
 );
 
+CREATE TABLE profile (
+  profile_id SERIAL PRIMARY KEY,
+  first_name varchar(64) NOT NULL,
+  last_name varchar(64) NOT NULL,
+  email NVARCHAR(150) NOT NULL UNIQUE,
+  country VARCHAR(64),
+  state_or_province VARCHAR(64)
+);
+
+CREATE TABLE exercise_stats (
+total_workouts integer,
+total_donated bigint
+);
+
+CREATE TABLE shop (
+
+);
+
+CREATE TABLE exercises (
+
+);
+
+
+
 COMMIT;
