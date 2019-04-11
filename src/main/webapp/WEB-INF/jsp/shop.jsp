@@ -8,6 +8,15 @@
 </c:otherwise>
 </c:choose>
 
-<p>Shop test text</p>
+
+
+	<section id="main-content-list">
+	
+	
+		<h1>Store Test</h1>
+
+		
+	</section>
+
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
