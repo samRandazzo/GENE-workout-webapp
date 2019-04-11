@@ -12,6 +12,7 @@
    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
 </head>
 <body>
+
 <div id = "wrapper">
     <section class="hero is-dark is-medium">
   <!-- Hero head: will stick at the top -->
@@ -57,16 +58,21 @@
 	              Podcast 
 	            </a> --%>
 	            <span class="navbar-item">
-	              <a href = "<c:url value = "/profile"/>">
-	              	<input type = "button" type = "submit" value = "Log In" class="button is-warning">
-	              </a>
-	              <input id = "login-username" class = "input is-small is-warning" type = "text" placeholder = "username"/>
-	              <input id = "login-password" class = "input is-small is-warning" type = "password" placeholder = "password"/>
+	            <form action="login" method="post">
+	            
+	              <input name="userName" type="text"/>
+	              <input name="password" type="password"/>
+	              <input type="submit"/>
+	              
+	            </form>
 	            </span>
+	            
 	            <a class="navbar-item"
 	            	href = "<c:url value = "signUp"/>">
 	              Sign Up
 	            </a>
+	            
+	            <a class="navbar-item" href="<c:url value="logout"/>">Log Out</a>
 	          </div>
 	        </div>
 	      </div>

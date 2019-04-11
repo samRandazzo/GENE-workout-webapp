@@ -12,6 +12,9 @@
 <title>Profile</title>
 </head>
 <body>
+<<<<<<< HEAD
+<h2>Welcome, ${sessionScope.currentUser.userName}</h2>
+=======
 <!--   <section class="section">
     <div class="container">
       <h1 class="title">WELCOME</h1>
@@ -262,5 +265,6 @@
 
 
 </div>
+>>>>>>> aa4c8049bccb01b7f365e518a4b5748ef5a81779
 </body>
 </html>
