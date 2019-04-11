@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<h1>New User Sign Up</h1>
+<h2>New User Sign Up</h2>
 <br>
 
 <script type="text/javascript">

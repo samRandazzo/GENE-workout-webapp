@@ -7,6 +7,6 @@
 <title>Profile</title>
 </head>
 <body>
-<h2>Welcome, user</h2>
+<h2>Welcome, ${sessionScope.currentUser.userName}</h2>
 </body>
 </html>
