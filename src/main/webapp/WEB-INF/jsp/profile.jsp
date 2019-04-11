@@ -37,56 +37,161 @@
       50 push-ups<br>
       100 squats<br>
       1 mile run<br>
-      
+    
+    <style>
+    #center {
+     margin: 30%  30%;
+     font-family: tahoma;
+     }
+    .stopwatch {
+         border:1px solid #000;
+         background-color: #eee;
+         text-align: center;
+         width:656px;
+         height: 230px;
+         overflow: hidden;
+     }
+     .stopwatch span{
+         display: block;
+         font-size: 100px;
+     }
+     .stopwatch p{
+         display: inline-block;
+         font-size: 40px;
+     }
+     .stopwatch a{
+       font-size:45px;
+     }
+     a:link,
+     a:visited{
+         color :#000;
+         text-decoration: none;
+         padding: 12px 14px;
+         border: 1px solid #000;
+     }
+    </style>
+  </head>
+  <body>
+      <div id="center">
+            <div class="timer stopwatch"></div>
+      </div>
+
+    <script>
+      const Stopwatch = function(elem, options) {
+        let timer = createTimer(),
+          startButton = createButton("start", start),
+          stopButton = createButton("stop", stop),
+          resetButton = createButton("reset", reset),
+          offset,
+          clock,
+          interval,
+          hrs = 0,
+          min = 0;
+
+        // default options
+        options = options || {};
+        options.delay = options.delay || 1;
+
+        // append elements
+        elem.appendChild(timer);
+        elem.appendChild(startButton);
+        elem.appendChild(stopButton);
+        elem.appendChild(resetButton);
+
+        // initialize
+        reset();
+
+        // private functions
+        function createTimer() {
+          return document.createElement("span");
+        }
+
+        function createButton(action, handler) {
+          if (action !== "reset") {
+            let a = document.createElement("a");
+            a.href = "#" + action;
+            a.innerHTML = action;
+            a.addEventListener("click", function(event) {
+              handler();
+              event.preventDefault();
+            });
+            return a;
+          } else if (action === "reset") {
+            let a = document.createElement("a");
+            a.href = "#" + action;
+            a.innerHTML = action;
+            a.addEventListener("click", function(event) {
+              clean();
+              event.preventDefault();
+            });
+            return a;
+          }
+        }
+
+        function start() {
+          if (!interval) {
+            offset = Date.now();
+            interval = setInterval(update, options.delay);
+          }
+        }
+
+        function stop() {
+          if (interval) {
+            clearInterval(interval);
+            interval = null;
+          }
+        }
+
+        function reset() {
+          clock = 0;
+          render(0);
+        }
+
+        function clean() {
+          min = 0;
+          hrs = 0;
+          clock = 0;
+          render(0);
+        }
+
+        function update() {
+          clock += delta();
+          render();
+        }
+
+        function render() {
+          if (Math.floor(clock / 1000) === 60) {
+            min++;
+            reset();
+            if (min === 60) {
+              min = 0;
+              hrs++;
+            }
+          }
+          timer.innerHTML =
+            hrs + "<p>hrs</p>" + min + "<p>min</p>" + Math.floor(clock / 1000)+ "<p>sec</p>";
+        }
+
+        function delta() {
+          var now = Date.now(),
+            d = now - offset;
+
+          offset = now;
+          return d;
+        }
+      };
+
+      // Initiating the Stopwatch
+      var elems = document.getElementsByClassName("timer");
+
+      for (var i = 0, len = elems.length; i < len; i++) {
+        new Stopwatch(elems[i]);
+      }
+    </script>  
       
       </p>
       <!-- <p id="demo"></p> -->
-      <h1><time>00:00:00</time></h1>
-<button id="start">start</button>
-<button id="stop">stop</button>
-<button id="clear">clear</button>
-<script>
-var h1 = document.getElementsByTagName('h1')[0]
-    start = document.getElementById('start'),
-    stop = document.getElementById('stop'),
-    clear = document.getElementById('clear'),
-    seconds = 0, minutes = 0, hours = 0,
-    t;
-
-function add() {
-    seconds++;
-    if (seconds >= 60) {
-        seconds = 0;
-        minutes++;
-        if (minutes >= 60) {
-            minutes = 0;
-            hours++;
-        }
-    }
-    
-    h1.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-
-    timer();
-}
-function timer() {
-    t = setTimeout(add, 1000);
-}
-timer();
-
-
-/* Start button */
-onclick = timer.start(); 
-
-/* Stop button */
-stop.onclick = function() {
-    clearTimeout(t);
-}
-
-/* Clear button */
-clear.onclick = function() {
-    h1.textContent = "00:00:00";
-    seconds = 0; minutes = 0; hours = 0;
-}</script>
+      
     </article>
   </div>
   <div class="tile is-parent">
