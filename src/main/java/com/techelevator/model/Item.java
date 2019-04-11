@@ -1,13 +1,13 @@
 package com.techelevator.model;
 
 public class Item {
-	private Product product;
+	private Products product;
 	private int quantity;
 	
-	public Product getProduct() {
+	public Products getProduct() {
 		return product;
 	}
-	public void setProduct(Product product) {
+	public void setProduct(Products product) {
 		this.product = product;
 	}
 	public int getQuantity() {
@@ -19,7 +19,7 @@ public class Item {
 	public Item() {
 		
 	}
-	public Item(Product product, int quanitity) {
+	public Item(Products product, int quanitity) {
 		this.product = product;
 		this.quantity = quanitity;
 	}
