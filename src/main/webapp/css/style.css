@@ -54,3 +54,25 @@ footer a:hover {
 	padding-top: 15px;
 	text-align: center;
 }
+
+#tile-wrapper{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+#profile-picture{
+	align: center;
+}
+#title{
+		text-align: center;
+	
+}
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white; 
+}
+

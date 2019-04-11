@@ -37,9 +37,13 @@
 	               href = "<c:url value = "/home"/>">
 	              Home
 	            </a>
+	             <a class="navbar-item"
+	               href = "<c:url value = "community"/>">
+	              Community 
+	            </a>
 	            <a class="navbar-item"
 	               href = "<c:url value = "/howItWorks"/>">
-	              How it works
+	             Partner With Us
 	            </a>
 	            <a class="navbar-item"
 	               href = "<c:url value = "leaderboard"/>">
@@ -49,6 +53,10 @@
 	               href = "<c:url value = "/shop"/>">
 	              Shop
 	            </a>
+	          <%--     <a class="navbar-item"
+	               href = "<c:url value = "podcast"/>">
+	              Podcast 
+	            </a> --%>
 	            <span class="navbar-item">
 	            <form action="login" method="post">
 	            

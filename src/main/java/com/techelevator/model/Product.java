@@ -2,17 +2,17 @@ package com.techelevator.model;
 
 public class Product {
 
-	private long id;
+	private String id;
 	private String name;
 	private String photo;
 	private double price;
 	private String size;
 	
 	
-	public long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -39,7 +39,10 @@ public class Product {
 	public void setSize(String size) {
 		this.size = size;
 	}
-	public Product(long id, String name, String photo, double price, String size) {
+	public Product() {
+		
+	}
+	public Product(String id, String name, String photo, double price, String size) {
 		this.id = id;
 		this.name = name;
 		this.photo =photo;
