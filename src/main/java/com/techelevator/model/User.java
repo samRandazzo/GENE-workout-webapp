@@ -1,9 +1,12 @@
 package com.techelevator.model;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class User {
+	@NotNull
+	@Size(min=2, max=30)
 	private String userName;
 	
 	@Size(min=10, message="Password too short, must be at least 10")
