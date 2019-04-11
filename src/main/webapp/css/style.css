@@ -75,4 +75,6 @@ footer a:hover {
   line-height: 30px; /* To center it vertically */
   color: white; 
 }
-
+.error{
+	color:red; 
+}

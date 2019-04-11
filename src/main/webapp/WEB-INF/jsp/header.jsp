@@ -72,7 +72,6 @@
 	              Sign Up
 	            </a>
 	           	
-	             <a class="navbar-item" href="<c:url value="logout"/>">Log Out</a>
 	          </div>
 	        </div>
 	      </div>
