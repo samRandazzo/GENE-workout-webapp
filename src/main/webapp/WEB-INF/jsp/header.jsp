@@ -62,7 +62,7 @@
 	            
 	              <input name="userName" type="text"/>
 	              <input name="password" type="password"/>
-	              <input type="submit"/>
+	              <input type="submit" value="Log In"/>
 	              
 	            </form>
 	            </span>
@@ -71,8 +71,8 @@
 	            	href = "<c:url value = "signUp"/>">
 	              Sign Up
 	            </a>
-	            
-	            <a class="navbar-item" href="<c:url value="logout"/>">Log Out</a>
+	           	
+	             <a class="navbar-item" href="<c:url value="logout"/>">Log Out</a>
 	          </div>
 	        </div>
 	      </div>

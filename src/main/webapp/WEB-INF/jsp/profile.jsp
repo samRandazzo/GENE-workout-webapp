@@ -1,20 +1,10 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:import url="/WEB-INF/jsp/header.jsp" />
+<c:import url="/WEB-INF/jsp/sessionHeader.jsp" />
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Profile</title>
-</head>
 <body>
-<<<<<<< HEAD
 <h2>Welcome, ${sessionScope.currentUser.userName}</h2>
-=======
 <!--   <section class="section">
     <div class="container">
       <h1 class="title">WELCOME</h1>
@@ -160,6 +150,5 @@ clear.onclick = function() {
 
 
 </div>
->>>>>>> aa4c8049bccb01b7f365e518a4b5748ef5a81779
 </body>
 </html>
