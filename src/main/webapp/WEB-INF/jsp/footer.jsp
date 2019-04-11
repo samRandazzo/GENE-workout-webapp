@@ -11,6 +11,18 @@
 					</a>
 				</li>
 				<li>
+				<li>
+					<a class = "footer-nav-item"
+						href = "<c:url value = "/community"/>">Community
+					</a>
+				</li>
+				<li>
+				<li>
+					<a class = "footer-nav-item"
+						href = "<c:url value = "/howItWorks"/>">How it works
+					</a>
+				</li>
+				<li>
 					<a class = "footer-nav-item"
 						href = "<c:url value = "/leaderboard"/>">Leaderboard
 					</a>

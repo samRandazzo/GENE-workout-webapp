@@ -29,6 +29,11 @@ public class UserController {
 		return "home";
 	}
 	
+	@RequestMapping(path="/community", method=RequestMethod.GET)
+	public String getCommunity() {
+		return "community";
+	}
+	
 	@RequestMapping(path="/howItWorks", method=RequestMethod.GET)
 	public String getHowItWorks() {
 		return "howItWorks";
@@ -42,6 +47,11 @@ public class UserController {
 	@RequestMapping(path="donations", method=RequestMethod.GET)
 	public String displayDonations() {
 		return "donations";
+	}
+	
+	@RequestMapping(path="profile", method=RequestMethod.GET)
+	public String displayProfilePage() {
+		return "profile";
 	}
 	
 	@RequestMapping(path="shop", method=RequestMethod.GET)
@@ -62,16 +72,13 @@ public class UserController {
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
-			return "redirect:/signup";
+			return "redirect:/signUp";
 		}
 		userDAO.saveUser(user.getUserName(), user.getPassword());
-		return "redirect:/home";
+		return "redirect:/profile";
 	}
 	
-	@RequestMapping(path="profile", method=RequestMethod.GET)
-	public String displayProfilePage() {
-		return "profile";
-	}
+	
 	
 	
 }
