@@ -42,7 +42,7 @@
 	            </a>
 	            <a class="navbar-item"
 	               href = "<c:url value = "/howItWorks"/>">
-	              How it works
+	             Partner With Us
 	            </a>
 	            <a class="navbar-item"
 	               href = "<c:url value = "leaderboard"/>">

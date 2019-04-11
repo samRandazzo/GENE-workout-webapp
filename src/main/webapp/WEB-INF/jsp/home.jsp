@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
 <!-- <<<<<<< HEAD -->
 <!-- <p>
 YOU WORKOUT. WE DONATE
@@ -21,28 +21,26 @@ This is the first fitness app that gives you the user real incentives to help th
 more accountable for the way our veterans are being treated. All you need to do is pick an organization to donate
  to and spend one hour working out. Then, a specified amount 
  is donated in your name by one of our partners. We are going to end the homeless veteran epidemic. </p> -->
-=======
-<section class = "section">
+<!-- ======= -->
+<!-- <section class = "section">
 	<div class = "container">
 		<h1 class = "title">How it Works</h1>
 		<h2 class = "subtitle">YOU Workout. WE Donate. <span id = "sub-title-logo">GENE</span></h2>
 		<p>SET UP A PROFILE </p>
 		<p>DO THE WORKOUT OF THE DAY </p>
 		<p>ONCE COMPLETED WE DONATE $$$ TO A VETERAN ORGANIZATION</p>
-		<p>REPEAT TOMORROW</p>
-=======
-<section id = "about-us" class = "section">
+		<p>REPEAT TOMORROW</p> -->
+<!-- ======= -->
+<!-- <section id = "about-us" class = "section">
 	<div class = "container">
 		<h1 class = "title">YOU Workout. WE Donate.</h1>
-		<p>Maecenas a diam semper mauris luctus volutpat. Pellentesque ac orci erat. Sed id lacus nunc. 
-		Donec justo erat, aliquet a enim vitae, consequat venenatis nunc. Maecenas ut molestie tortor. 
-		Ut eget turpis mi. Mauris luctus lectus et luctus scelerisque. Nulla a ligula convallis, suscipit 
-		quam non, mollis quam. Nam eu facilisis massa, non hendrerit tellus. Sed sed nunc ligula. Donec vitae 
-		diam ut sapien interdum tempus. Vivamus quis suscipit augue. Quisque egestas aliquam convallis. 
-		Aliquam sed congue purus. </p>
->>>>>>> e886d7323b1b0352ea61108e15f9a8c295587ff5
+		<p>Step 1. Create an Account 
+		Step 2. Pick a Veteran organization for us to Donate to 
+		Step 3. Do the Workout of the Day
+		Step 4. Watch the fund increase
+		Step 5. Repeat steps 2-5
 	</div>
-</section>
+</section> -->
 
 <section id = "carousel" class="section">
 	<div class="container">
