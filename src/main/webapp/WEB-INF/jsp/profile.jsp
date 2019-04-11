@@ -12,9 +12,10 @@
 <title>Profile</title>
 </head>
 <body>
-<<<<<<< HEAD
-<h2>Welcome, ${sessionScope.currentUser.userName}</h2>
-=======
+<!-- <<<<<<< HEAD -->
+<h2>Welcome, ${sessionScope.currentUser.userName} </h2>
+<p> Choose a Profile Picture</p>
+<!-- ======= -->
 <!--   <section class="section">
     <div class="container">
       <h1 class="title">WELCOME</h1>
@@ -25,10 +26,28 @@
     </div> 
   </section>-->
   
- <figure id="profile-picture" class="image is-3by1	
+<!--  <figure id="profile-picture" class="image is-3by1	
 " >
   <img src='{{src}}'>
-</figure> 
+</figure> --> 
+ <input type="file" id="browse" name="fileupload" style="display: none" onChange="Handlechange();"/>
+ <input type="hidden" id="filename" readonly="true"/>
+ <input type="button" value="Upload" id="fakeBrowse" onclick="HandleBrowseClick();"/>
+ </body>
+ <script>
+ function HandleBrowseClick()
+ {
+   var fileinput = document.getElementById("browse");
+   fileinput.click();
+ }
+
+function Handlechange()
+{
+ var fileinput = document.getElementById("browse");
+ var textinput = document.getElementById("filename");
+ textinput.value = fileinput.value;
+}
+</script>
   
   <div id="tile-wrapper" class="tile is-ancestor">
   <div class="tile is-parent">
@@ -43,27 +62,27 @@
     
     <style>
     #center {
-     margin: 30%  30%;
+     margin: 0%  10%;
      font-family: tahoma;
      }
     .stopwatch {
          border:1px solid #000;
          background-color: #eee;
          text-align: center;
-         width:656px;
-         height: 230px;
+         width:200px;
+         height: 100px;
          overflow: hidden;
      }
      .stopwatch span{
          display: block;
-         font-size: 100px;
+         font-size: 20px;
      }
      .stopwatch p{
          display: inline-block;
-         font-size: 40px;
+         font-size: 20px;
      }
      .stopwatch a{
-       font-size:45px;
+       font-size:10px;
      }
      a:link,
      a:visited{
@@ -172,7 +191,7 @@
             }
           }
           timer.innerHTML =
-            hrs + "<p>hrs</p>" + min + "<p>min</p>" + Math.floor(clock / 1000)+ "<p>sec</p>";
+            hrs + " <p> hrs </p> " + min + " <p> min </p> " + Math.floor(clock / 1000)+ " <p> sec </p> ";
         }
 
         function delta() {
@@ -183,13 +202,18 @@
           return d;
         }
       };
+     
 
       // Initiating the Stopwatch
       var elems = document.getElementsByClassName("timer");
 
       for (var i = 0, len = elems.length; i < len; i++) {
         new Stopwatch(elems[i]);
+        when()
       }
+      
+      //message for donations
+      
     </script>  
       
       </p>
@@ -197,10 +221,13 @@
       
     </article>
   </div>
-  <div class="tile is-parent">
+
+ 
+  
+<!--   <div class="tile is-parent">
     <article class="tile is-child box">
-<!--       <p class="title">CHARITY OF CHOICE</p>
- -->      <p class="subtitle"><div class="dropdown is-active">
+      <p class="title">CHARITY OF CHOICE</p>
+      <p class="subtitle"><div class="dropdown is-active">
   <div class="dropdown-trigger">
     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
       <span><strong>Choose a Charity!</strong></span>
@@ -230,18 +257,19 @@
   </div>
 </div></p>
     </article>
-  </div>
+  </div> -->
   <div class="tile is-parent">
     <article class="tile is-child box">
-      <p class="title">What's your why?</p>
+      <p class="title">Who's this workout for?</p>
       <p class="subtitle"></p>
-      <input type=”text” name=”name”>,
+	<textarea class="textarea" placeholder="e.g. My dad who served x number of years"></textarea>
       
       <div class="content">
         <p></p>
       </div>
     </article>
     </div>
+
 <!--       <div class="tile is-parent">
     <article class="tile is-child box">
       <p class="title">CHARITY OF CHOICE</p>
@@ -257,7 +285,7 @@
   </div> -->
   <div class="tile is-parent">
     <article class="tile is-child box">
-      <p class="title">Donation Progress</p>
+      <p class="title">Donation's Made</p>
       <p class="subtitle"></p>
       <div id="myProgress">
   <div id="myBar"></div>
@@ -265,6 +293,5 @@
 
 
 </div>
->>>>>>> aa4c8049bccb01b7f365e518a4b5748ef5a81779
 </body>
 </html>
