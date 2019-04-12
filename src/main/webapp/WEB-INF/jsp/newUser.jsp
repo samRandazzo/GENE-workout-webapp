@@ -3,6 +3,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+
 <h2>New User Sign Up</h2>
 <br>
 <!--  
@@ -49,6 +50,7 @@
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
 			<div class="form-group">
+				<h2>${message}</h2>
 				<form:label path="userName">User Name: </form:label>
 				<form:input path="userName" id="userName" name="userName" placeHolder="User Name" class="form-control" />
 				<form:errors path="userName" cssClass="error"/>

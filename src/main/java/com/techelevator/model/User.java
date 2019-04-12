@@ -1,6 +1,5 @@
 package com.techelevator.model;
 
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -10,6 +9,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class User {
 	@NotBlank
 	@Size(min=5, max=32, message="Username cannnot be less than 5 or more than 32 characters!")
+	
 	private String userName;
 	
 	@Size(min=10, message="Password too short, must be at least 10")
