@@ -70,6 +70,18 @@
 					<input type="radio" name="yes_no">No</input>
 					</p>
 			</div><br>-->
+				<div class="form-group">
+				<form:label path="email">Email: </form:label>
+				<form:input path="email" id="email" name="email" placeHolder="Re-Type Password" class="form-control"/>
+				<form:errors path="email" cssClass="error"/>	
+			</div><br>
+				<div class="form-group">
+				<form:label path="confirmEmail">Confirm Email: </form:label>
+				<form:input path="confirmEmail" id="confirmEmail" name="confirmEmail" placeHolder="Re-Type Password" class="form-control"/>
+				<form:errors path="confirmEmail" cssClass="error"/>	
+			</div><br>
+			
+			
 			<button type="submit" class="btn btn-primary">Create User</button>
 		</div><br>
 		<div class="col-sm-4"></div>
