@@ -78,16 +78,4 @@ public class UserController {
 		userDAO.saveUser(user.getUserName(), user.getPassword());
 		return "redirect:/profile";
 	}
-	
-<<<<<<< HEAD
-	
-	
-	
-=======
-	@RequestMapping(path="profile", method=RequestMethod.GET)
-	public String displayProfilePage() {
-		return "profile";
-	}
-		
->>>>>>> bcabda48991679b82b36213f70cf7413b7908059
 }
