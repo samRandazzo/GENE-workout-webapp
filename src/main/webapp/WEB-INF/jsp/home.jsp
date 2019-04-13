@@ -93,6 +93,11 @@
 				<textarea class = "textarea is-warning" type = "text" placeholder="Message"></textarea>
 			</div>
 		</div>
+		<div class="field">
+			<div class="control">
+				<input type = "submit" value = "Submit" class="button is-warning">
+			</div>
+		</div>
 	</div>
 </section>
 

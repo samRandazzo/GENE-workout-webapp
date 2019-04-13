@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:choose>
 	<c:when test="${sessionScope.currentUser.userName == null}">
 		<c:import url="/WEB-INF/jsp/header.jsp" />

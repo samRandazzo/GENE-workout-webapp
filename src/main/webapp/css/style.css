@@ -34,28 +34,46 @@
 	#nav-burger {
 		color: #ffdd57;
 	}
-/** HOMEPAGE **/
-	#about-us {
-		min-height: 400px;
-		background-image: url("../img/phbr2.jpg");	
+/** BACKGROUND IMAGES **/
+	#about-us,
+	#contact-form,
+	#sign-up-form {
+		min-height: 400px;			
 		background-position: center;
+	}
+	#about-us {
+		background-image: url("../img/phbr2.jpg");
 	}
 	#contact-form {
 		background-image: url("../img/phbr2.jpg");	
 	}
+	#sign-up-form {
+		background-image: url("../img/phbr2.jpg");
+	}
+/** HOMEPAGE **/
 	#about-us h1,
 	#about-us,
-	#contact-form h1 {
+	#contact-form h1,	
+	#contact-form .label {
 		color: #fff;
 	}
+	
 	#about-us .container {
 		padding-top: 50px;
 	}
 	#contact-form .input {
 		width: 50%;
 	}
-	#contact-form .label {
+/** SIGN-UP PAGE **/
+	#sign-up-form h1,
+	#sign-up-form .label {
 		color: #fff;
+	}	
+	#sign-up-form .input {
+		max-width: 50%;
+	}
+	.error{
+		color:red; 
 	}
 /** PROFILE PAGE **/
 	#tile-wrapper{
@@ -77,9 +95,7 @@
 	  line-height: 30px; /* To center it vertically */
 	  color: white; 
 	}
-	.error{
-		color:red; 
-	}
+	
 /** STICKY FOOTER FORMATTING **/
 	html {
 		height: 100%;

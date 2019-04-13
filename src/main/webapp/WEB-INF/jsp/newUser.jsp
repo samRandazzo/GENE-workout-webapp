@@ -3,70 +3,42 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+<section id = "sign-up-form" class = "section">
+	<div class = "container">
+		<h1 class="title">New User Sign Up</h1>
 
-<h2>New User Sign Up</h2>
-<br>
-<!--  
-<script type="text/javascript">
-	$(document).ready(function () {
-		$.validator.addMethod('capitals', function(thing){
-			return thing.match(/[A-Z]/);
-		});
-		$("form").validate({
+		<c:url var="formAction" value="/signUp" />
+		<form:form method="POST" action="${formAction}" modelAttribute="user">
+		<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
+		
+		<h2>${message}</h2>
 			
-			rules : {
-				userName : {
-					required : true
-				},
-				password : {
-					required : true,
-					minlength: 15,
-					capitals: true,
-				},
-				confirmPassword : {
-					required : true,		
-					equalTo : "#password"  
-				}
-			},
-			messages : {			
-				password: {
-					minlength: "Password too short, make it at least 15 characters",
-					capitals: "Field must contain a capital letter",
-				},
-				confirmPassword : {
-					equalTo : "Passwords do not match"
-				}
-			},
-			errorClass : "error"
-		});
-	});
-</script>
--->
-
-<c:url var="formAction" value="/signUp" />
-<form:form method="POST" action="${formAction}" modelAttribute="user">
-<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
-	<div class="row">
-		<div class="col-sm-4"></div>
-		<div class="col-sm-4">
-			<div class="form-group">
-			<div class="user-exists">
-				<h2>${message}</h2>
-				</div>
-				<form:label path="userName">User Name: </form:label>
-				<form:input path="userName" id="userName" name="userName" placeHolder="User Name" class="form-control" />
+		<div class = "field">
+			<label class = "label is-warning">User Name (between 5 - 32 letters)</label>
+			<div class = "control">
+				<form:input class = "input is-warning form-control" path="userName" 
+							id="userName" name="userName" type = "text"/>
+			</div>
 				<form:errors path="userName" cssClass="error"/>
-			</div><br>
-			<div class="form-group">
-				<form:label path="password">Password: </form:label>
-				<form:input path="password" id="password" name="password" placeHolder="Password" class="form-control" type="password" />
+		</div>
+			
+		<div class="field">
+			<label class = "label is-warning">Password (1 upper, 1 lower, min 10)</label>
+			<div class = "control">
+				<form:input class = "input is-warning form-control" path="password" 
+							id="password" name="password" type="password"/>
+			</div>
 				<form:errors path="password" cssClass="error"/>
-			</div><br>
-			<div class="form-group">
-				<form:label path="confirmPassword">Confirm Password: </form:label>
-				<form:input path="confirmPassword" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" type="password" />
-				<form:errors path="confirmPassword" cssClass="error"/>	
-			</div><br>
+		</div>
+		
+		<div class="field">
+			<label class = "label is-warning">Confirm Password</label>
+			<div class = "control">
+				<form:input class = "input is-warning form-control" path="confirmPassword" 
+							id="confirmPassword" name="confirmPassword" type="password" />
+			</div>
+			<form:errors path="confirmPassword" cssClass="error"/>	
+		</div>
 			<!--  <div class="form-group">
 				<label for="veteranStatus">Are you a veteran?</label>
 					<p>
@@ -74,22 +46,33 @@
 					<input type="radio" name="yes_no">No</input>
 					</p>
 			</div><br>-->
-				<div class="form-group">
-				<form:label path="email">Email: </form:label>
-				<form:input path="email" id="email" name="email" placeHolder="Email" class="form-control"/>
-				<form:errors path="email" cssClass="error"/>	
-			</div><br>
-				<div class="form-group">
-				<form:label path="confirmEmail">Confirm Email: </form:label>
-				<form:input path="confirmEmail" id="confirmEmail" name="confirmEmail" placeHolder="Re-Type Email" class="form-control"/>
-				<form:errors path="confirmEmail" cssClass="error"/>	
-			</div><br>
-			
-			
-			<button type="submit" class="btn btn-primary">Create User</button>
-		</div><br>
-		<div class="col-sm-4"></div>
-	</div>
-</form:form>
+		<div class="field">
+			<label class = "label is-warning">Email</label>
+			<div class = "control">
+				<form:input class = "input is-warning form-control" path="email" 
+							id="email" name="email" type="email" />
+			</div>
+			<form:errors path="email" cssClass="error"/>	
+		</div>
 		
+		<div class="field">
+			<label class = "label is-warning">Confirm Email</label>
+			<div class = "control">
+				<form:input class = "input is-warning form-control" path="confirmEmail" 
+							id="confirmEmail" name="confirmEmail" type="email" />
+			</div>
+			<form:errors path="email" cssClass="error"/>	
+		</div>
+		
+		<div class="field">
+			<div class="control">
+				<input type = "submit" value = "Submit" class="button is-warning">
+			</div>
+		</div>
+		<!-- </div><br>
+		<div class="col-sm-4"></div>
+	</div> -->
+		</form:form>
+	</div>	<!-- container class -->
+</section>		
 <c:import url="/WEB-INF/jsp/footer.jsp" />
