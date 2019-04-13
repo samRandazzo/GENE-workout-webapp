@@ -68,7 +68,7 @@
 
 <section id="contact-form" class="section">
 	<div class="container">
-		<h1 class="title is-white">Contact Us</h1>
+		<h1 class="title">Contact Us</h1>
 		<div class="field">
 			<label class="label is-warning">Name</label>
 			<div class="control">

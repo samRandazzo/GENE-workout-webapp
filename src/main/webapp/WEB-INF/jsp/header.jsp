@@ -22,7 +22,7 @@
 							<a class="navbar-item" href="<c:url value = "/home"/>"> 
 								<span id="text-logo">GENE</span> 
 							</a> 
-							<span class="navbar-burger burger" data-target="navbarMenuHeroA">
+							<span id = "nav-burger" class="navbar-burger burger" data-target="navbarMenuHeroA">
 								<span></span> 
 								<span></span> 
 								<span></span>
@@ -37,14 +37,24 @@
 								<a class="navbar-item" href="<c:url value = "/shop"/>">Shop</a>
 								
 								<%-- LOG-IN NAV FORM --%>
-								<form class="navbar-item" name = "login-form" action = "login" method = "POST">
-						            <span id = "login-section">
+								<form id = "login-section"
+									  class="navbar-item" 
+									  name = "login-form" 
+									  action = "login" 
+									  method = "POST">
+						            <!-- <span id = "login-section"> -->
+						            <span>
 						              <input type = "submit" value = "Log In" class="button is-warning">
+					              	</span>
+					              	<span class = "login-item">
 						              <input name = "userName" id = "login-username" class = "input is-small is-warning" 
            							  type = "text" placeholder = "username"/>
+        							</span>
+        							<span>
 						              <input name = "password" id = "login-password" class = "input is-small is-warning" 
 						              type = "password" placeholder = "password"/>
 						            </span>
+						            <!-- </span> -->
 	            				</form>
 								<!-- <form action="login" method="POST">
 									<input type="submit" value="Log In"/> 
