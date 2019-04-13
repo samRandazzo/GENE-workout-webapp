@@ -47,6 +47,9 @@
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
 			<div class="form-group">
+			<c:if test = "${booleanVariable}">
+				<h2 value = "${booleanVariable}">User name is already taken.</h2>
+			</c:if>	
 				<label for="userName">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
 			</div><br>
