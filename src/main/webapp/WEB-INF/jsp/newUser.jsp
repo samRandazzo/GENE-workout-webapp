@@ -1,10 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+
 <h2>New User Sign Up</h2>
 <br>
-
+<!--  
 <script type="text/javascript">
 	$(document).ready(function () {
 		$.validator.addMethod('capitals', function(thing){
@@ -39,39 +41,53 @@
 		});
 	});
 </script>
+-->
 
 <c:url var="formAction" value="/signUp" />
-<form method="POST" action="${formAction}">
+<form:form method="POST" action="${formAction}" modelAttribute="user">
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 	<div class="row">
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
 			<div class="form-group">
-			<c:if test = "${booleanVariable}">
-				<h2 value = "${booleanVariable}">User name is already taken.</h2>
-			</c:if>	
-				<label for="userName">User Name: </label>
-				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
+				<h2>${message}</h2>
+				<form:label path="userName">User Name: </form:label>
+				<form:input path="userName" id="userName" name="userName" placeHolder="User Name" class="form-control" />
+				<form:errors path="userName" cssClass="error"/>
 			</div><br>
 			<div class="form-group">
-				<label for="password">Password: </label>
-				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
+				<form:label path="password">Password: </form:label>
+				<form:input path="password" id="password" name="password" placeHolder="Password" class="form-control" type="password" />
+				<form:errors path="password" cssClass="error"/>
 			</div><br>
 			<div class="form-group">
-				<label for="confirmPassword">Confirm Password: </label>
-				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
+				<form:label path="confirmPassword">Confirm Password: </form:label>
+				<form:input path="confirmPassword" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" type="password" />
+				<form:errors path="confirmPassword" cssClass="error"/>	
 			</div><br>
-			<div class="form-group">
+			<!--  <div class="form-group">
 				<label for="veteranStatus">Are you a veteran?</label>
 					<p>
 					<input type="radio" name="yes_no" checked>Yes</input>
 					<input type="radio" name="yes_no">No</input>
 					</p>
+			</div><br>-->
+				<div class="form-group">
+				<form:label path="email">Email: </form:label>
+				<form:input path="email" id="email" name="email" placeHolder="Re-Type Password" class="form-control"/>
+				<form:errors path="email" cssClass="error"/>	
 			</div><br>
+				<div class="form-group">
+				<form:label path="confirmEmail">Confirm Email: </form:label>
+				<form:input path="confirmEmail" id="confirmEmail" name="confirmEmail" placeHolder="Re-Type Password" class="form-control"/>
+				<form:errors path="confirmEmail" cssClass="error"/>	
+			</div><br>
+			
+			
 			<button type="submit" class="btn btn-primary">Create User</button>
 		</div><br>
 		<div class="col-sm-4"></div>
 	</div>
-</form>
+</form:form>
 		
 <c:import url="/WEB-INF/jsp/footer.jsp" />

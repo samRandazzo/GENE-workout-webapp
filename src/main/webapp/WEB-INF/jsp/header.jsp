@@ -37,18 +37,20 @@
 								<a class="navbar-item" href="<c:url value = "/shop"/>">Shop</a>
 								
 								<%-- LOG-IN NAV FORM --%>
-								<!-- <form name = "login-form" action = "login" method = "POST">
-		            <span id = "login-section" class="navbar-item">
-		              <input type = "submit" value = "login" class="button is-warning">
-		              <input name = "userName" id = "login-username" class = "input is-small is-warning" type = "text" placeholder = "username"/>
-		              <input name = "password" id = "login-password" class = "input is-small is-warning" type = "password" placeholder = "password"/>
-		            </span>
-	            </form> -->
-								<form action="login" method="POST">
+								<form class="navbar-item" name = "login-form" action = "login" method = "POST">
+						            <span id = "login-section">
+						              <input type = "submit" value = "Log In" class="button is-warning">
+						              <input name = "userName" id = "login-username" class = "input is-small is-warning" 
+           							  type = "text" placeholder = "username"/>
+						              <input name = "password" id = "login-password" class = "input is-small is-warning" 
+						              type = "password" placeholder = "password"/>
+						            </span>
+	            				</form>
+								<!-- <form action="login" method="POST">
 									<input type="submit" value="Log In"/> 
 									<input name="userName" type="text"/> 
 									<input name="password" type="password"/>
-								</form>
+								</form> -->
 
 								<a class="navbar-item" href="<c:url value = "signUp"/>">Sign Up</a>
 							</div>

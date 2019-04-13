@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import com.techelevator.model.UserDAO;
 
 @Controller
 public class UserController {
-
+	
 	private UserDAO userDAO;
 
 	@Autowired
@@ -69,13 +70,19 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/signUp", method=RequestMethod.POST)
-	public String createUser(@Valid @ModelAttribute User user, BindingResult result, RedirectAttributes flash) {
+	public String createUser(@Valid @ModelAttribute User user, BindingResult result, RedirectAttributes flash, HttpSession session) {
+	    
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
 			return "redirect:/signUp";
+		} else if (userDAO.searchForUsernameAndPassword(user.getUserName(), user.getPassword())) {
+			session.setAttribute("message", "NOPE");
+			return "redirect:/signUp";
+		
+		} else {
+			userDAO.saveUser(user.getUserName(), user.getPassword(), user.getEmail());
 		}
-		userDAO.saveUser(user.getUserName(), user.getPassword());
 		return "redirect:/profile";
 	}
 }

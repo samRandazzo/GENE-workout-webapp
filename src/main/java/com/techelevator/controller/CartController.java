@@ -1,8 +1,14 @@
 package com.techelevator.controller;
 
+import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -10,49 +16,75 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.techelevator.model.CartBean;
 import com.techelevator.model.Item;
-import com.techelevator.model.ProductModel;
 
-@Controller
-@RequestMapping(value ="cart")
-public class CartController {
 
-	@RequestMapping(value = "index", method = RequestMethod.GET)
-	public String index() {
-		return "cart/index";
-	}
-	
-	@RequestMapping(value = "buy/{id}", method = RequestMethod.GET)
-	public String buy(@PathVariable("id") String id, HttpSession session) {
-		ProductModel productModel = new ProductModel();
-		if (session.getAttribute("cart") == null) {
-			List<Item> cart = new ArrayList<Item>();
-			cart.add(new Item(productModel.find(id), 1));
-			session.setAttribute("cart", cart);
-		}else {
-			List<Item> cart = (List<Item>) session.getAttribute("cart");
-			int index = this.exists(id, cart);
-			int quantity = cart.get(index).getQuantity()+1;
-			cart.get(index).setQuantity(quantity);
-		}
-		return "redirect:/cart/index";
-	}
-	@RequestMapping(value = "remove/{id}", method = RequestMethod.GET)
-	public String remove(@PathVariable("id") String id, HttpSession session) {
-		ProductModel productModel = new ProductModel();
-		List<Item> cart = (List<Item>) session.getAttribute("cart");
-		int index = this.exists(id, cart);
-		cart.remove(index);
-		session.setAttribute("cart", cart);
-		return "redirect:/cart/index";
-	}
 
-	private int exists(String id, List<Item> cart) {
-		for (int i = 0; i < cart.size(); i++) {
-			if (cart.get(i).getProduct().getId().equalsIgnoreCase(id)) {
-				return i;
+public class CartController extends HttpServlet {
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+		
+		String strAction = request.getParameter("action");
+		
+		if(strAction!=null && !strAction.equals("")) {
+			if(strAction.contentEquals("add")) {
+				addToCart(request);
+			}else if (strAction.equals("Update")) {
+				updateCart(request);
+			}else if (strAction.equals("Delete")) {
+				deleteCart(request);
 			}
 		}
-		return -1;
+		response.sendRedirect("../ShoppingCart.jsp");
+	}
+
+	private void deleteCart(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String strItemIndex = request.getParameter("itemIndex");
+		CartBean cartBean = null;
+		
+		Object objCartBean = session.getAttribute("cart");
+		if(objCartBean != null) {
+			cartBean = new CartBean();
+		}
+		cartBean.deleteCartItem(strItemIndex);
+	}
+
+	private void updateCart(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String strQuantity = request.getParameter("quantity");
+		String strItemIndex = request.getParameter("itemIndex");
+		
+		CartBean cartBean = null;
+		
+		Object objCartBean = session.getAttribute("cart");
+		if(objCartBean !=null) {
+		} else {
+			cartBean = new CartBean();
+		}
+		cartBean.updateCartItem(strItemIndex, strQuantity);
+	}
+
+	private void addToCart(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String idNum = request.getParameter("id");
+		String strName = request.getParameter("name");
+		String strDescription =request.getParameter("description");
+		String strPrice = request.getParameter("price");
+		String strQuantity = request.getParameter("quantity");
+		
+		CartBean cartBean = null;
+		
+		Object objCartBean = session.getAttribute("cart");
+		
+		if(objCartBean != null) {
+			cartBean = (CartBean) objCartBean;
+		} else {
+			cartBean = new CartBean();
+			session.setAttribute("cart", cartBean);
+		}
+		cartBean.addCartItem(idNum, strName, strDescription, strPrice, strQuantity);
 	}
 }
