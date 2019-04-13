@@ -1,7 +1,15 @@
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<c:import url="/WEB-INF/jsp/sessionHeader.jsp" />
+<c:choose>
+	<c:when test="${sessionScope.currentUser.userName == null}">
+		<c:import url="/WEB-INF/jsp/header.jsp" />
+	</c:when>
+	<c:when test="${sessionScope.currentUser.userName == 'admin'}">
+		<c:import url="/WEB-INF/jsp/adminHeader.jsp" />
+	</c:when>
+	<c:otherwise>
+		<c:import url="/WEB-INF/jsp/sessionHeader.jsp" />
+	</c:otherwise>
+</c:choose>
 
 <body>
 	<h2>Welcome, ${sessionScope.currentUser.userName}</h2>
@@ -19,16 +27,13 @@
 		<img src='{{src}}'>
 	</figure>
 
-	<div id = "tile-wrapper" class = "tile is-ancestor">
+	<div id="tile-wrapper" class="tile is-ancestor">
 		<div class="tile is-parent">
 			<article class="tile is-child box">
 				<p class="title">W.O.D.</p>
 				<p class="subtitle">
-					1 mile run<br> 
-					20 pull-ups<br> 
-					50 push-ups<br> 
-					100 squats<br> 
-					1 mile run<br>
+					1 mile run<br> 20 pull-ups<br> 50 push-ups<br> 100
+					squats<br> 1 mile run<br>
 				</p>
 				<!-- <p id="demo"></p> -->
 				<h1>
@@ -89,55 +94,54 @@
 			</article>
 		</div>
 	</div>
-		<div class="tile is-parent">
-			<article class="tile is-child box">
-				<p class="subtitle">
-					<div class="dropdown is-active">
-						<div class="dropdown-trigger">
-							<button class="button" aria-haspopup="true"
-								aria-controls="dropdown-menu">
-								<span><strong>Choose a Charity!</strong></span> <span
-									class="icon is-small"> <i class="fas fa-angle-down"
-									aria-hidden="true"></i>
-								</span>
-							</button>
-						</div>
-						<div class="dropdown-menu" id="dropdown-menu" role="menu">
-							<div class="dropdown-content">
-								<a href="#" class="dropdown-item">Wounded Warriors</a> 
-								<a class="dropdown-item">SFWF</a> 
-								<a href="#" class="dropdown-item">NSF</a> 
-								<a href="#" class="dropdown-item">GBF</a>
-								<a href="#" class="dropdown-item">USO</a>
-							</div>
-						</div>
+	<div class="tile is-parent">
+		<article class="tile is-child box">
+			<p class="subtitle">
+			<div class="dropdown is-active">
+				<div class="dropdown-trigger">
+					<button class="button" aria-haspopup="true"
+						aria-controls="dropdown-menu">
+						<span><strong>Choose a Charity!</strong></span> <span
+							class="icon is-small"> <i class="fas fa-angle-down"
+							aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+				<div class="dropdown-menu" id="dropdown-menu" role="menu">
+					<div class="dropdown-content">
+						<a href="#" class="dropdown-item">Wounded Warriors</a> <a
+							class="dropdown-item">SFWF</a> <a href="#" class="dropdown-item">NSF</a>
+						<a href="#" class="dropdown-item">GBF</a> <a href="#"
+							class="dropdown-item">USO</a>
 					</div>
-				</p>
-			</article>
-		</div>
-		<div class="tile is-parent">
-			<article class="tile is-child box">
-				<p class="title">What's your why?</p>
-				<p class="subtitle"></p>
-				<input type = "text"€ name = "€name"€>,
-
-				<div class="content">
-					<p></p>
 				</div>
+			</div>
+			</p>
+		</article>
+	</div>
+	<div class="tile is-parent">
+		<article class="tile is-child box">
+			<p class="title">What's your why?</p>
+			<p class="subtitle"></p>
+			<input type="text" € name="€name"€>,
 
-				
-			</article>
-		</div>
-		<div class="tile is-parent">
-			<article class="tile is-child box">
-				<p class="title">Donation Progress</p>
-				<p class="subtitle"></p>
-				<div id="myProgress">
-					<div id="myBar"></div>
-				</div>
-			</article>
-		</div>
-		<!--       <div class="tile is-parent">
+			<div class="content">
+				<p></p>
+			</div>
+
+
+		</article>
+	</div>
+	<div class="tile is-parent">
+		<article class="tile is-child box">
+			<p class="title">Donation Progress</p>
+			<p class="subtitle"></p>
+			<div id="myProgress">
+				<div id="myBar"></div>
+			</div>
+		</article>
+	</div>
+	<!--       <div class="tile is-parent">
     <article class="tile is-child box">
       <p class="title">CHARITY OF CHOICE</p>
       <p class="subtitle"><div class="dropdown is-active">
@@ -145,5 +149,5 @@
            <p class="title">
      Achievements!
     </p> -->
- 
-<c:import url="/WEB-INF/jsp/footer.jsp" />
+
+	<c:import url="/WEB-INF/jsp/footer.jsp" />

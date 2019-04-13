@@ -50,7 +50,9 @@
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
 			<div class="form-group">
+			<div class="user-exists">
 				<h2>${message}</h2>
+				</div>
 				<form:label path="userName">User Name: </form:label>
 				<form:input path="userName" id="userName" name="userName" placeHolder="User Name" class="form-control" />
 				<form:errors path="userName" cssClass="error"/>
@@ -74,12 +76,12 @@
 			</div><br>-->
 				<div class="form-group">
 				<form:label path="email">Email: </form:label>
-				<form:input path="email" id="email" name="email" placeHolder="Re-Type Password" class="form-control"/>
+				<form:input path="email" id="email" name="email" placeHolder="Email" class="form-control"/>
 				<form:errors path="email" cssClass="error"/>	
 			</div><br>
 				<div class="form-group">
 				<form:label path="confirmEmail">Confirm Email: </form:label>
-				<form:input path="confirmEmail" id="confirmEmail" name="confirmEmail" placeHolder="Re-Type Password" class="form-control"/>
+				<form:input path="confirmEmail" id="confirmEmail" name="confirmEmail" placeHolder="Re-Type Email" class="form-control"/>
 				<form:errors path="confirmEmail" cssClass="error"/>	
 			</div><br>
 			
