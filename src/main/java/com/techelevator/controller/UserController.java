@@ -5,7 +5,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -68,11 +67,13 @@ public class UserController {
 			return "redirect:/signUp";
 		}
 		if(userDAO.searchForUsernameAndPassword(user.getUserName(), user.getPassword())) {
-			session.setAttribute("message", "NOPE");
+			session.setAttribute("message", "Username already exists");
 			return "redirect:/signUp";
 		
 		}else {
 			userDAO.saveUser(user.getUserName(), user.getPassword(), user.getEmail());
+			session.setAttribute("currentUser", userDAO.getUserByUserName(user.getUserName()));
+
 		}
 		return "redirect:/profile";
 	}
@@ -80,6 +81,11 @@ public class UserController {
 	@RequestMapping(path="profile", method=RequestMethod.GET)
 	public String displayProfilePage() {
 		return "profile";
+	}
+	
+	@RequestMapping(path="/administrator", method=RequestMethod.GET)
+	public String displayAdministratorPage() {
+		return "administrator";
 	}
 		
 }
