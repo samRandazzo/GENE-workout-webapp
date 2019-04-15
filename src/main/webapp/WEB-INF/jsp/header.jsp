@@ -38,9 +38,9 @@
 	              Home
 	            </a>
 	             <a class="navbar-item"
-	               href = "<c:url value = "community"/>">
-	              Community 
-	            </a>
+	              href = "<c:url value = "community"/>"> 
+				Community</a>
+				
 	            <a class="navbar-item"
 	               href = "<c:url value = "/howItWorks"/>">
 	             Partner With Us

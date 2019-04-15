@@ -49,6 +49,10 @@ public class UserController {
 	public String displayShop() {
 		return "shop";
 	}
+	@RequestMapping(path="/personaltraining", method=RequestMethod.GET)
+	public String getPersonalTraining() {
+		return "personaltraining";
+	}
 
 	@RequestMapping(path="signUp", method=RequestMethod.GET)
 	public String displaySignUpForm(ModelMap modelHolder) {

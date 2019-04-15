@@ -99,6 +99,7 @@ function Handlechange()
       </div>
 
     <script>
+      let interval;
       const Stopwatch = function(elem, options) {
         let timer = createTimer(),
           startButton = createButton("start", start),
@@ -106,7 +107,6 @@ function Handlechange()
           resetButton = createButton("reset", reset),
           offset,
           clock,
-          interval,
           hrs = 0,
           min = 0;
 
@@ -162,8 +162,9 @@ function Handlechange()
             clearInterval(interval);
             interval = null;
           }
+          console.log(interval);
         }
-
+        
         function reset() {
           clock = 0;
           render(0);
@@ -224,11 +225,28 @@ function Handlechange()
 
  
   
-<!--   <div class="tile is-parent">
+  <div class="tile is-parent">
     <article class="tile is-child box">
       <p class="title">CHARITY OF CHOICE</p>
-      <p class="subtitle"><div class="dropdown is-active">
-  <div class="dropdown-trigger">
+<div class="charity">
+    <label class="radio1">
+      <input type="radio" name="hour">
+Green Beret Foundation
+    </label>
+    <label class="radio">
+      <input type="radio" name="hour">
+Navy Seal Foundation
+    </label><br>
+      <input type="radio" name="hour">
+Travis Manion Foundation  
+		  </label><br>
+      <input type="radio" name="hour">
+Children of Fallen Patriots
+    </label><br>
+    
+  </div>
+      <!-- <p class="subtitle"><div class="dropdown is-active"> -->
+ <!--  <div class="dropdown-trigger">
     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
       <span><strong>Choose a Charity!</strong></span>
       <span class="icon is-small">
@@ -253,9 +271,9 @@ function Handlechange()
       <a href="#" class="dropdown-item">
         USO
       </a>
-    </div>
-  </div>
-</div></p>
+    </div> -->
+<!--   </div>
+</div></p> -->
     </article>
   </div> -->
   <div class="tile is-parent">
@@ -285,10 +303,82 @@ function Handlechange()
   </div> -->
   <div class="tile is-parent">
     <article class="tile is-child box">
-      <p class="title">Donation's Made</p>
+      <p class="title">Input your Time(round up!)</p>
       <p class="subtitle"></p>
-      <div id="myProgress">
-  <div id="myBar"></div>
+  <!--     <div id="myProgress">
+  <div id="myBar"></div> -->
+  <style>
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -250%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+</style>
+</head>
+<body style="text-align:center">
+
+<!-- <div class="popup" onclick="myFunction()">30 Minutes
+  <span class="popuptext" id="myPopup">$.50 was donated in your name!</span>
+</div>
+
+<div class="popup" onclick="myFunction()">45 Minutes
+  <span class="popuptext" id="secondPop">$.75 was donated in your name!</span>
+</div>
+
+<div class="popup" onclick="myFunction()">1 Hour
+  <span class="popuptext" id="thirdPop">$1.00 was donated in your name!</span>
+</div> -->
+  <div class="control">
+    <label class="radio">
+      <input type="radio" name="thirty">
+     30 Minutes
+    </label>
+    <label class="radio">
+      <input type="radio" name="hour" checked>
+      1 Hour
+    </label><br>
+    <input type="submit"> 
+    
+  </div>
+
+
+<script>
+/* function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+    
+    var popup = document.getElementById("secondPop");
+    popup.classList.toggle("show");
+    
+  
+} */
+</script>
 </div>
 
 

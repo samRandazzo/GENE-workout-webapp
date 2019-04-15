@@ -13,7 +13,7 @@ public class User {
 	})
 	private String password;
 	private String role;
-	
+
 	private String confirmPassword;
 	public String getUserName() {
 		return userName;
