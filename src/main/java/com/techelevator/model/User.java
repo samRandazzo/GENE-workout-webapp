@@ -24,7 +24,7 @@ public class User {
 	private String confirmEmail;
 
 	private String role;
-	
+
 	private String confirmPassword;
 	public String getUserName() {
 		return userName;
