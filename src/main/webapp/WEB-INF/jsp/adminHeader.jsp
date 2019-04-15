@@ -31,19 +31,14 @@
 						</div>
 						<div id="navbarMenuHeroA" class="navbar-menu">
 							<div class="navbar-end">
-								<a class="navbar-item" href="<c:url value = "/home"/>"> Home
-								</a> <a class="navbar-item" href="<c:url value = "community"/>">
-									Community </a> <a class="navbar-item"
-									href="<c:url value = "leaderboard"/>"> Leaderboard </a> <a
-									class="navbar-item" href="<c:url value = "/shop"/>"> Shop </a>
-								<%-- <a class="navbar-item"
-href = "<c:url value = "podcast"/>">
-Podcast
-</a> --%>						<a class="navbar-item" href="<c:url value = "administrator"/>">
-									Administrator </a>
+								<a class="navbar-item" href="<c:url value = "/home"/>"> Home</a> 
+								<a class="navbar-item" href="<c:url value = "community"/>">Community</a> 
+								<a class="navbar-item" href="<c:url value = "leaderboard"/>">Leaderboard</a> 
+								<a class="navbar-item" href="<c:url value = "/shop"/>">Shop</a>
+								<a class="navbar-item" href="<c:url value = "administrator"/>">Administrator</a>
 								<div id="profile-banner" class="navbar-item">
-									<img id="nav-profile-pic" src="img/dollaSign.jpg"></img> <span
-										class="nav-profile-username">admin</span>
+									<img id="nav-profile-pic" src="img/dollaSign.jpg"></img> 
+									<span class="nav-profile-username">admin</span>
 								</div>
 								<a class="navbar-item" href="<c:url value="logout"/>">Log Out</a>
 								

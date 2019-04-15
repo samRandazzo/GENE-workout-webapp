@@ -9,18 +9,23 @@
 	</c:otherwise>
 </c:choose>
 
-<section id="about-us" class="section">
+<section id="about-us" class = "section">
 	<div class="container">
-		<h1 class="title">YOU Workout. WE Donate.</h1>
-		<p>Maecenas a diam semper mauris luctus volutpat. Pellentesque ac
-			orci erat. Sed id lacus nunc. Donec justo erat, aliquet a enim vitae,
-			consequat venenatis nunc. Maecenas ut molestie tortor. Ut eget turpis
-			mi. Mauris luctus lectus et luctus scelerisque. Nulla a ligula
-			convallis, suscipit quam non, mollis quam. Nam eu facilisis massa,
-			non hendrerit tellus. Sed sed nunc ligula. Donec vitae diam ut sapien
-			interdum tempus. Vivamus quis suscipit augue. Quisque egestas aliquam
-			convallis. Aliquam sed congue purus.</p>
-	</div>
+		<h1 class="title is-1 has-text-white"><span>YOU</span> Workout. <span>SPONSORS</span> Donate. 3 easy steps:</h1>
+		<div class = "content">
+			<h3 class="title is-3 has-text-warning">Sign Up</h3>			
+			<p class = "is-size-4">Click the <span class = "gene">SIGN UP</span> link in the navigation menu,
+			   						fill out the form, submit, and that's it!</p>
+		
+			<h3 class="title is-3 has-text-warning">Workout and Record</h3>
+			<p class = "is-size-4">Given our military roots, we work on the honor system here.
+								  	When you complete a workout, log it in your profile.</p>
+		
+			<h3 class="title is-3 has-text-warning">Donate</h3>
+			<p class = "is-size-4">Every month, your sponsor will make a donation on your behalf to
+								  	your foundation of choice.</p>			
+		</div>	<!-- content -->
+	</div>	<!-- container -->
 </section>
 	<!--  
 			<p>This is the first fitness app that gives you the user real incentives to help those in need. We need to be 
@@ -68,9 +73,9 @@
 
 <section id="contact-form" class="section">
 	<div class="container">
-		<h1 class="title">Contact Us</h1>
+		<h1 class="title is-1 has-text-white">Contact Us</h1>
 		<div class="field">
-			<label class="label is-warning">Name</label>
+			<label class="label">Name</label>
 			<div class="control">
 				<input class="input is-warning" type="text" placeholder="Name">
 			</div>

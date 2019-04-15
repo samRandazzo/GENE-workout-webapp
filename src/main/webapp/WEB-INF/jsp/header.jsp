@@ -20,7 +20,7 @@
 					<div class="container">
 						<div class="navbar-brand">
 							<a class="navbar-item" href="<c:url value = "/home"/>"> 
-								<span id="text-logo">GENE</span> 
+								<span class = "gene is-size-1">GENE</span> 
 							</a> 
 							<span id = "nav-burger" class="navbar-burger burger" data-target="navbarMenuHeroA">
 								<span></span> 
@@ -32,11 +32,10 @@
 							<div class="navbar-end">
 								<a class="navbar-item" href="<c:url value = "/home"/>"> Home</a> 
 								<a class="navbar-item" href="<c:url value = "community"/>">Community</a> 
-								<a class="navbar-item" href="<c:url value = "/howItWorks"/>">How it works</a> 
 								<a class="navbar-item" href="<c:url value = "leaderboard"/>">Leaderboard</a> 
 								<a class="navbar-item" href="<c:url value = "/shop"/>">Shop</a>
 								
-								<%-- LOG-IN NAV FORM --%>
+								<%-- LOG-IN BUTTON/FIELDS --%>
 								<form id = "login-section"
 									  class="navbar-item" 
 									  name = "login-form" 
@@ -46,7 +45,7 @@
 						            <span>
 						              <input type = "submit" value = "Log In" class="button is-warning">
 					              	</span>
-					              	<span class = "login-item">
+					              	<span class = "username-field">
 						              <input name = "userName" id = "login-username" class = "input is-small is-warning" 
            							  type = "text" placeholder = "username"/>
         							</span>
@@ -56,13 +55,7 @@
 						            </span>
 						            <!-- </span> -->
 	            				</form>
-								<!-- <form action="login" method="POST">
-									<input type="submit" value="Log In"/> 
-									<input name="userName" type="text"/> 
-									<input name="password" type="password"/>
-								</form> -->
-
-								<a class="navbar-item" href="<c:url value = "signUp"/>">Sign Up</a>
+								<a id="sign-up" class="navbar-item gene is-size-4" href="<c:url value = "signUp"/>">SIGN UP</a>
 							</div>
 						</div>
 					</div>

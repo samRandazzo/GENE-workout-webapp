@@ -2,7 +2,7 @@
 	</div>	<!-- content-container -->
 </div>	<!-- wrapper (everything but footer) -->
 	<footer>
-		<p id = "footer-text-logo">GENE</p>
+		<p class = "gene is-size-3">GENE</p>
 		<nav id = "footer-nav">
 			<ul>
 				<li>

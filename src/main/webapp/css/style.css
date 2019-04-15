@@ -1,8 +1,11 @@
 /** GENE LOGO FORMATTING **/
-	#text-logo,
 	#sub-title-logo,
 	#footer-text-logo,
 	#copyright-text-logo {
+		font-family: 'Black Ops One', cursive;	
+		color: #ffdd57;
+	}
+	.gene {
 		font-family: 'Black Ops One', cursive;	
 		color: #ffdd57;
 	}
@@ -10,7 +13,17 @@
 		font-size: 3em;
 	}
 /** NAVIGATION **/
-	.login-item {
+	#navbarMenuHeroA a:hover {
+		color: #ffdd57;
+		background-color: #363636;
+	}
+	#sign-up {
+		color: #ffdd57;
+	}
+	#sign-up:hover {
+		text-decoration: underline;
+	}
+	.username-field {
 		display: inline-block;
 		margin: 0 10px;
 	}
@@ -27,7 +40,7 @@
 	.footer-nav-item {
 		font-weight: bold;
 	}
-	.nav-profile-username {
+	.session-nav-username {
 		color: #ffdd57;
 		font-weight: 1000;
 	}
@@ -39,7 +52,7 @@
 	#contact-form,
 	#sign-up-form {
 		min-height: 400px;			
-		background-position: center;
+		background-position: cover;
 	}
 	#about-us {
 		background-image: url("../img/phbr2.jpg");
@@ -50,14 +63,14 @@
 	#sign-up-form {
 		background-image: url("../img/phbr2.jpg");
 	}
+	#leaderboard {
+		background-image: url("../img/phbr2.jpg");
+	}
 /** HOMEPAGE **/
-	#about-us h1,
 	#about-us,
-	#contact-form h1,	
-	#contact-form .label {
+	#contact-form .label{
 		color: #fff;
 	}
-	
 	#about-us .container {
 		padding-top: 50px;
 	}
@@ -65,7 +78,6 @@
 		width: 50%;
 	}
 /** SIGN-UP PAGE **/
-	#sign-up-form h1,
 	#sign-up-form .label {
 		color: #fff;
 	}	
@@ -95,7 +107,42 @@
 	  line-height: 30px; /* To center it vertically */
 	  color: white; 
 	}
-	
+/** LEADERBOARD **/
+	#leader {
+		margin: 30px auto;
+		border-radius: 10px;
+		display: grid;
+		grid-template-columns: 1fr 2fr 2.5fr 2fr 1fr;		
+	}	
+	.leader-start {
+		justify-self: start;
+		align-self: center;
+	}
+	.leader-center {
+		justify-self: center;
+		align-self: center;
+	}
+	.leader-end {
+		justify-self: end;
+		align-self: center;
+	}
+	.leader-pic {
+		height: 90px;
+		width: 90px;
+		border-radius: 50%;
+		border: 5px solid #ffdd57;
+	}
+	.leader-text {
+		color: #fff;
+		font-size: 1.25rem;
+		font-weight: 1000;
+	}
+	#leader a {
+		color: #fff;
+	}
+	#leader a:hover {
+		color: #ffdd57;
+	}
 /** STICKY FOOTER FORMATTING **/
 	html {
 		height: 100%;

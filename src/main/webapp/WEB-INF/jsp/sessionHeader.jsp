@@ -22,7 +22,7 @@
 	      <div class="container">
 	        <div class="navbar-brand">
 	          <a class="navbar-item" href = "<c:url value = "/home"/>">
-	          	<span id = "text-logo">GENE</span>
+	          	<span class="gene is-size-1">GENE</span>
 	          </a>
 	          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
 	            <span></span>
@@ -38,7 +38,7 @@
 	            <a class="navbar-item" href = "<c:url value = "/shop"/>">Shop</a>
 	            <div id = "profile-banner" class = "navbar-item">
 	            	<img id = "nav-profile-pic" src = "img/theBoss.jpg"></img>
-	            	<span class = "nav-profile-username">theBoss19</span>	            
+	            	<span class = "session-nav-username"><a href = "<c:url value = "/profile"/>">theBoss19</a></span>	            
 	            </div>
 	            <a class="navbar-item" href="<c:url value="logout"/>">Log Out</a>
 	          </div>
