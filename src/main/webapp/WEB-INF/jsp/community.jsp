@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-</body>
-</html>
+<c:choose>
+	<c:when test="${sessionScope.userName == null}">
+		<c:import url="/WEB-INF/jsp/header.jsp" />
+	</c:when>
+	<c:otherwise>
+		<c:import url="/WEB-INF/jsp/sessionHeader.jsp" />
+	</c:otherwise>
+</c:choose>
+
+<c:import url="/WEB-INF/jsp/footer.jsp" />

@@ -1,78 +1,140 @@
-html {
-	height: 100%;
-}
-body {
-	min-height: 100%;
-	display: grid;
-	grid-template-rows: 1fr auto;
-}
-#about-us {
-	background: #666 url("img/phbr1.jpg") no-repeat center cover;
-}
-footer {
-	grid-row-start: 2;
-	grid-row-end: 3;
-}
-.carousel-item {
-	width: 100vw;
-}
-#text-logo,
-#sub-title-logo,
-#footer-text-logo,
-#copyright-text-logo {
-	font-family: 'Black Ops One', cursive;	
-	color: #ffdd57;
-}
-#text-logo {
-	font-size: 3em;
-}
-#footer-text-logo {
-	font-size: 2em;
-	padding-left: 15px;
-}
-#copyright-text-logo {
-	font-size: 1em;
-}
-#login-username {
-	margin: 0 10px;
-}
-footer {
-	width: 100%;
-	background-color: #363636;
-	color: #fff;
-}
-.footer-nav-item {
-	display: block;
-	text-align: center;
-	margin: 0 auto;
-	color: #fff;
-}
-footer a:hover {
-	color: #ffdd57;	
-}
-#copyright {
-	padding-top: 15px;
-	text-align: center;
-}
-
-#tile-wrapper{
-	width: 90%;
-	margin: 0 auto;
-	text-align: center;
-}
-#profile-picture{
-	align: center;
-}
-#title{
-		text-align: center;
+/** GENE LOGO FORMATTING **/
+	#text-logo,
+	#sub-title-logo,
+	#footer-text-logo,
+	#copyright-text-logo {
+		font-family: 'Black Ops One', cursive;	
+		color: #ffdd57;
+	}
+	#text-logo {
+		font-size: 3em;
+	}
+/** NAVIGATION **/
+	.login-item {
+		display: inline-block;
+		margin: 0 10px;
+	}
+	#nav-profile-pic {
+		display: inline-block;
+		margin-right: 20px;
+		height: 60px;
+		width: 60px;
+		background-color: #555;
+		border-radius: 50%;
+		max-height: 60px;
+	}
+	.navbar-item,
+	.footer-nav-item {
+		font-weight: bold;
+	}
+	.nav-profile-username {
+		color: #ffdd57;
+		font-weight: 1000;
+	}
+	#nav-burger {
+		color: #ffdd57;
+	}
+/** BACKGROUND IMAGES **/
+	#about-us,
+	#contact-form,
+	#sign-up-form {
+		min-height: 400px;			
+		background-position: center;
+	}
+	#about-us {
+		background-image: url("../img/phbr2.jpg");
+	}
+	#contact-form {
+		background-image: url("../img/phbr2.jpg");	
+	}
+	#sign-up-form {
+		background-image: url("../img/phbr2.jpg");
+	}
+/** HOMEPAGE **/
+	#about-us h1,
+	#about-us,
+	#contact-form h1,	
+	#contact-form .label {
+		color: #fff;
+	}
 	
-}
-#myBar {
-  width: 10%;
-  height: 30px;
-  background-color: #4CAF50;
-  text-align: center; /* To center it horizontally (if you want) */
-  line-height: 30px; /* To center it vertically */
-  color: white; 
-}
-
+	#about-us .container {
+		padding-top: 50px;
+	}
+	#contact-form .input {
+		width: 50%;
+	}
+/** SIGN-UP PAGE **/
+	#sign-up-form h1,
+	#sign-up-form .label {
+		color: #fff;
+	}	
+	#sign-up-form .input {
+		max-width: 50%;
+	}
+	.error{
+		color:red; 
+	}
+/** PROFILE PAGE **/
+	#tile-wrapper{
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	#profile-picture{
+		align: center;
+	}
+	#title{
+		text-align: center;		
+	}
+	#myBar {
+	  width: 10%;
+	  height: 30px;
+	  background-color: #4CAF50;
+	  text-align: center; /* To center it horizontally (if you want) */
+	  line-height: 30px; /* To center it vertically */
+	  color: white; 
+	}
+	
+/** STICKY FOOTER FORMATTING **/
+	html {
+		height: 100%;
+	}
+	body {
+		min-height: 100%;
+		display: grid;
+		grid-template-rows: 1fr auto;
+	}
+	footer {
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+/** FOOTER SECTION **/
+	#footer-text-logo {
+		font-size: 2em;
+		padding-left: 15px;
+	}
+	footer {
+		width: 100%;
+		background-color: #363636;
+		color: #fff;
+	}
+	#footer-nav li {
+		font-size: .75em;
+	}
+	footer a:hover {
+		color: #ffdd57;	
+	}
+	.footer-nav-item {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+		color: #fff;
+	}
+	#copyright {
+		padding-top: 15px;
+		text-align: center;
+	}
+	#copyright-text-logo {
+		font-size: 1em;
+	}

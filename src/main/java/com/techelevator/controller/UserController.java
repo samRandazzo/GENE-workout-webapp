@@ -1,10 +1,10 @@
 package com.techelevator.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,7 +17,7 @@ import com.techelevator.model.UserDAO;
 
 @Controller
 public class UserController {
-
+	
 	private UserDAO userDAO;
 
 	@Autowired
@@ -28,6 +28,11 @@ public class UserController {
 	@RequestMapping(path="/home", method=RequestMethod.GET)
 	public String getHome() {
 		return "home";
+	}
+	
+	@RequestMapping(path="/community", method=RequestMethod.GET)
+	public String getCommunity() {
+		return "community";
 	}
 	
 	@RequestMapping(path="/howItWorks", method=RequestMethod.GET)
@@ -63,19 +68,32 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/signUp", method=RequestMethod.POST)
-	public String createUser(@Valid @ModelAttribute User user, BindingResult result, RedirectAttributes flash) {
+	public String createUser(@Valid @ModelAttribute User user, BindingResult result, RedirectAttributes flash, HttpSession session) {
+	    
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
 			return "redirect:/signUp";
+		} 
+		
+		if(userDAO.searchForUsernameAndPassword(user.getUserName(), user.getPassword())) {
+			session.setAttribute("message", "Username already exists");
+			return "redirect:/signUp";
+		
+		} else {
+			userDAO.saveUser(user.getUserName(), user.getPassword(), user.getEmail());
+			session.setAttribute("currentUser", userDAO.getUserByUserName(user.getUserName()));
 		}
-		userDAO.saveUser(user.getUserName(), user.getPassword());
-		return "redirect:/home";
+		return "redirect:/profile";
 	}
 	
 	@RequestMapping(path="profile", method=RequestMethod.GET)
 	public String displayProfilePage() {
 		return "profile";
 	}
-		
+	
+	@RequestMapping(path="/administrator", method=RequestMethod.GET)
+	public String displayAdministratorPage() {
+		return "administrator";
+	}
 }
