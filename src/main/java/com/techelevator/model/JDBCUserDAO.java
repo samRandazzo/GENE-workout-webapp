@@ -1,5 +1,7 @@
 package com.techelevator.model;
 
+import java.sql.Timestamp;
+
 import javax.sql.DataSource;
 
 import org.bouncycastle.util.encoders.Base64;
@@ -24,13 +26,13 @@ public class JDBCUserDAO implements UserDAO {
 	}
 	
 	@Override
-	public void saveUser(String userName, String password, String email) {
+	public void saveUser(String userName, String password, String email, Timestamp since) {
 		byte[] salt = hashMaster.generateRandomSalt();
 		String hashedPassword = hashMaster.computeHash(password, salt);
 		String saltString = new String(Base64.encode(salt));
 		
-		jdbcTemplate.update("INSERT INTO app_user(user_name, password, salt, email) VALUES (?, ?, ?, ?)",
-				userName, hashedPassword, saltString, email);
+		jdbcTemplate.update("INSERT INTO app_user(user_name, password, salt, email, user_since) VALUES (?, ?, ?, ?, ?)",
+				userName, hashedPassword, saltString, email, since);
 	}
 
 	@Override
@@ -67,9 +69,18 @@ public class JDBCUserDAO implements UserDAO {
 			thisUser = new User();
 			thisUser.setUserName(user.getString("user_name"));
 			thisUser.setPassword(user.getString("password"));
+			thisUser.setEmail(user.getString("email"));
+			thisUser.setUserSince(user.getTimestamp("user_since"));
 		}
 
 		return thisUser;
+	}
+
+	@Override
+	public void deleteUser(String userName) {
+		String sqlDeleteUserByUsernameString = "DELETE FROM app_user WHERE user_name = ?";
+		jdbcTemplate.batchUpdate(sqlDeleteUserByUsernameString, userName);
+		
 	}
 
 }

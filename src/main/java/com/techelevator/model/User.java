@@ -1,5 +1,7 @@
 package com.techelevator.model;
 
+import java.sql.Timestamp;
+
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -26,6 +28,10 @@ public class User {
 	private String role;
 
 	private String confirmPassword;
+	private boolean isadmin = false;
+	private Timestamp userSince;
+	
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -68,5 +74,10 @@ public class User {
 	public void setConfirmEmail(String confirmEmail) {
 		this.confirmEmail = confirmEmail;
 	}
-
+	public void setUserSince(Timestamp timestamp) {
+		this.userSince = timestamp;
+	}
+	public Timestamp getUserSince() {
+		return userSince;
+	}
 }

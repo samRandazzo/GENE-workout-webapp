@@ -2,7 +2,7 @@
 	</div>	<!-- content-container -->
 </div>	<!-- wrapper (everything but footer) -->
 	<footer>
-		<p class = "gene is-size-3">GENE</p>
+		<p id="footer-gene" class = "gene is-size-3">GENE</p>
 		<nav id = "footer-nav">
 			<ul>
 				<li>
@@ -19,7 +19,7 @@
 				<li>
 				<li>
 					<a class = "footer-nav-item"
-						href = "<c:url value = "/howItWorks"/>">How it works
+						href = "<c:url value = "/partnerWithUs"/>">Partner With Us
 					</a>
 				</li>
 				<li>

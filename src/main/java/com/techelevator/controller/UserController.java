@@ -1,5 +1,8 @@
 package com.techelevator.controller;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -7,9 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.model.User;
@@ -81,8 +87,8 @@ public class UserController {
 			return "redirect:/signUp";
 		
 		} else {
-			userDAO.saveUser(user.getUserName(), user.getPassword(), user.getEmail());
-			session.setAttribute("currentUser", userDAO.getUserByUserName(user.getUserName()));
+			user.setUserSince(Timestamp.valueOf(LocalDateTime.now()));
+			userDAO.saveUser(user.getUserName(), user.getPassword(), user.getEmail(), user.getUserSince());
 		}
 		return "redirect:/profile";
 	}
@@ -95,5 +101,16 @@ public class UserController {
 	@RequestMapping(path="/administrator", method=RequestMethod.GET)
 	public String displayAdministratorPage() {
 		return "administrator";
+	}
+	@RequestMapping(path = "/userSearch", method = RequestMethod.GET)
+	public String searchUsers(@RequestParam String search, ModelMap model) {
+	    model.put("user", userDAO.getUserByUserName(search));
+	    return "administrator";
+	}
+
+	@GetMapping("/deleteUser/{userName}")
+	public String deleteUser(@PathVariable("userName")String userName) {
+	    userDAO.deleteUser(userName);
+	    return "redirect:/administrator";
 	}
 }
