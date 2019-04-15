@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <c:choose> 
 <c:when test="${sessionScope.currentUser.userName == null}">
 <c:import url="/WEB-INF/jsp/header.jsp" />
@@ -8,15 +9,31 @@
 </c:otherwise>
 </c:choose>
 
+<section class="centeredPanel">
 
+	<H2>GENE Store</H2>
 
-	<section id="main-content-list">
-	
-	
-		<h1>Store Test</h1>
+	<c:url value="/shoppingCart" var="shoppingCartUrl"/>
+	<a href="${shoppingCartUrl}">View Shopping Cart</a>
 
-		
-	</section>
-
+	<div class="products">
+		<c:forEach var="product" items="${products}">
+			<div class="product">
+				<div class="product-image">
+					<c:url value="/productDetail?id=${product.id}" var="productDetailUrl"/>
+					<c:url value="/img/${product.imageName}" var="productImageUrl"/>
+					<a href="${productDetailUrl}">
+						<img src="${productImageUrl}"/>
+					</a>
+				</div>
+				<div class="product-data">
+					<p class="title">${product.name}</p>
+					<p class="price"><fmt:formatNumber type = "number" maxFractionDigits = "2" value = "${product.price}" /></p>
+				</div>
+			</div>
+		</c:forEach>
+	</div>
+ 
+ </section>
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
