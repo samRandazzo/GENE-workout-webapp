@@ -56,10 +56,10 @@ public class UserController {
 		return "donations";
 	}
 	
-	@RequestMapping(path="shop", method=RequestMethod.GET)
-	public String displayShop() {
-		return "shop";
-	}
+//	@RequestMapping(path="shop", method=RequestMethod.GET)
+//	public String displayShop() {
+//		return "shop";
+//	}
 	@RequestMapping(path="/personaltraining", method=RequestMethod.GET)
 	public String getPersonalTraining() {
 		return "personaltraining";
@@ -74,7 +74,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/signUp", method=RequestMethod.POST)
-	public String createUser(@Valid @ModelAttribute User user, BindingResult result, RedirectAttributes flash, HttpSession session) {
+	public String createUser(@Valid @ModelAttribute User user, 
+											BindingResult result, 
+											RedirectAttributes flash, 
+											HttpSession session) {
 	    
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);

@@ -24,13 +24,11 @@ public class User {
 	private String email;
 	@NotBlank(message="Email is required") @Email(message="Email address does not match")
 	private String confirmEmail;
-
-	private String role;
-
-	private String confirmPassword;
-	private boolean isadmin = false;
-	private Timestamp userSince;
 	
+	private String role;
+	private String confirmPassword;
+	private boolean admin = false;
+	private Timestamp userSince;	
 	
 	public String getUserName() {
 		return userName;
@@ -80,4 +78,11 @@ public class User {
 	public Timestamp getUserSince() {
 		return userSince;
 	}
+	public boolean isAdmin() {
+		return admin;
+	}
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+	
 }

@@ -29,12 +29,14 @@ public class AuthenticationController {
 	
 	@RequestMapping(path="/login", method=RequestMethod.POST)
 	public String login(@Valid @RequestParam String userName, 
-						@Valid @RequestParam String password, 
+						@Valid @RequestParam String password,
 						@RequestParam(required=false) String destination,
 						HttpSession session) {
-		if(userDAO.searchForUsernameAndPassword(userName, password)) {
+		if(userDAO.searchForUsernameAndPassword(userName, password) && userDAO.getAdminStatus(userName)) {
 			session.setAttribute("currentUser", userDAO.getUserByUserName(userName));
-			
+			return "redirect:/administrator";
+		} else if(userDAO.searchForUsernameAndPassword(userName, password)) {
+			session.setAttribute("currentUser", userDAO.getUserByUserName(userName));			
 			return "redirect:/profile";
 		} else {
 			return "redirect:/home";

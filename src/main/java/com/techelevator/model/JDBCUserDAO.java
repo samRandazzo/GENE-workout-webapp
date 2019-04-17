@@ -1,5 +1,6 @@
 package com.techelevator.model;
 
+import java.io.Console;
 import java.sql.Timestamp;
 
 import javax.sql.DataSource;
@@ -81,6 +82,19 @@ public class JDBCUserDAO implements UserDAO {
 		String sqlDeleteUserByUsernameString = "DELETE FROM app_user WHERE user_name = ?";
 		jdbcTemplate.batchUpdate(sqlDeleteUserByUsernameString, userName);
 		
+	}
+
+	@Override
+	public boolean getAdminStatus(String userName) {
+		String sqlGetAdminStatusByUserName = "SELECT is_admin FROM app_user WHERE user_name = ?";
+		SqlRowSet adminStatus = jdbcTemplate.queryForRowSet(sqlGetAdminStatusByUserName, userName);
+		
+		boolean status = false;
+		if(adminStatus.next()) {
+			status = adminStatus.getBoolean("is_admin");
+		}
+		
+		return status;		
 	}
 
 }

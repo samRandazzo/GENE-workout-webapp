@@ -1,7 +1,6 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +14,7 @@
 </head>
 <body>
 <div id = "wrapper">
-    <section class="hero is-dark is-medium">
+    <section id="session-nav" class="hero is-dark is-medium">
   <!-- Hero head: will stick at the top -->
 	  <div class="hero-head">
 	    <nav class="navbar">
@@ -33,14 +32,14 @@
 	        <div id="navbarMenuHeroA" class="navbar-menu">
 	          <div class="navbar-end">
 	            <a class="navbar-item" href = "<c:url value = "/home"/>">Home</a>
-	            <a class="navbar-item" href = "<c:url value = "community"/>">Community</a>
+	            <%-- <a class="navbar-item" href = "<c:url value = "partnerWithUs"/>">Partner With Us</a> --%>
 	            <a class="navbar-item" href = "<c:url value = "leaderboard"/>">Leaderboard</a>
 	            <a class="navbar-item" href = "<c:url value = "/shop"/>">Shop</a>
-	            <div id = "profile-banner" class = "navbar-item">
-	            	<img id = "nav-profile-pic" src = "img/theBoss.jpg"></img>
-	            	<span class = "session-nav-username"><a href = "<c:url value = "/profile"/>">theBoss19</a></span>	            
-	            </div>
-	            <a class="navbar-item" href="<c:url value="logout"/>">Log Out</a>
+            	<a class="navbar-item" href = "<c:url value = "/profile"/>">
+            		<img id = "nav-profile-pic" src = "img/phldr2.jpg"/>
+            	</a>
+           		<a id="session-nav-username" class="navbar-item gene is-size-4" href = "<c:url value = "/profile"/>">theBoss19</a>
+           		<a class="navbar-item" href="<c:url value="logout"/>">Log Out</a>
 	          </div>
 	        </div>
 	      </div>

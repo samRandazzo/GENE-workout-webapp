@@ -27,7 +27,7 @@ public class StoreController {
 		public String displayStore(ModelMap modelMap) {
 			List<Product> products = productDao.getAllProducts();
 			modelMap.addAttribute("products", products);
-			return "store";
+			return "shop";
 		}
 		
 		@RequestMapping("/productDetail")
@@ -48,7 +48,7 @@ public class StoreController {
 			Product product = productDao.getProductById(id);
 			ShoppingCart sc = getShoppingCart(session);
 			sc.addToCart(product, quantity);
-			return "redirect:/store";
+			return "redirect:/shop";
 		}
 		
 		private ShoppingCart getShoppingCart(HttpSession session) {

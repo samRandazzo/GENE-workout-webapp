@@ -13,5 +13,7 @@ public interface UserDAO {
 	public Object getUserByUserName(String userName);
 	
 	public void deleteUser(String userName);
+	
+	public boolean getAdminStatus(String userName);
 
 }

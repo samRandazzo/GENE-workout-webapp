@@ -4,6 +4,9 @@
 	<c:when test="${sessionScope.currentUser.userName == null}">
 		<c:import url="/WEB-INF/jsp/header.jsp" />
 	</c:when>
+	<c:when test="${sessionScope.currentUser.userName == 'admin'}">
+		<c:import url="/WEB-INF/jsp/adminHeader.jsp"/>
+	</c:when>
 	<c:otherwise>
 		<c:import url="/WEB-INF/jsp/sessionHeader.jsp" />
 	</c:otherwise>
@@ -11,7 +14,7 @@
 
 <section id="about-us" class = "section">
 	<div class="container">
-		<h1 class="title is-1 has-text-white"><span>YOU</span> Workout. <span>SPONSORS</span> Donate. 3 easy steps:</h1>
+		<h1 class="title is-1 has-text-white">YOU Workout. SPONSORS Donate. 3 easy steps:</h1>
 		<div class = "content">
 			<h3 class="title is-3 has-text-warning">Sign Up</h3>			
 			<p class = "is-size-4">Click the <span class = "gene">SIGN UP</span> link in the navigation menu,

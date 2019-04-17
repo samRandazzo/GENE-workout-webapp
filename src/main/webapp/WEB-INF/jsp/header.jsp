@@ -31,16 +31,14 @@
 						<div id="navbarMenuHeroA" class="navbar-menu">
 							<div class="navbar-end">
 								<a class="navbar-item" href="<c:url value = "/home"/>"> Home</a> 
-								<a class="navbar-item" href="<c:url value = "community"/>">Community</a> 
+								<%-- <a class="navbar-item" href="<c:url value = "community"/>">Community</a> --%> 
 								<a class="navbar-item" href="<c:url value = "leaderboard"/>">Leaderboard</a> 
-								<a class="navbar-item" href="<c:url value = "/shop"/>">Shop</a>								
-								<%-- LOG-IN BUTTON/FIELDS --%>
-								<form id = "login-section"
+								<a class="navbar-item" href="<c:url value = "/shop"/>">Shop</a>
+								<form id = "login-section" 
 									  class="navbar-item" 
 									  name = "login-form" 
 									  action = "login" 
 									  method = "POST">
-						            <!-- <span id = "login-section"> -->
 						            <span>
 						              <input type = "submit" value = "Log In" class="button is-warning">
 					              	</span>
@@ -52,7 +50,6 @@
 						              <input name = "password" id = "login-password" class = "input is-small is-warning" 
 						              type = "password" placeholder = "password"/>
 						            </span>
-						            <!-- </span> -->
 	            				</form>
 								<a id="sign-up" class="navbar-item gene is-size-4" href="<c:url value = "signUp"/>">SIGN UP</a>
 							</div>

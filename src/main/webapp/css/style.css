@@ -13,7 +13,8 @@
 		font-size: 3em;
 	}
 /** NAVIGATION **/
-	#navbarMenuHeroA a:hover {
+	#navbarMenuHeroA a:hover,
+	#session-nav a:hover {
 		color: #ffdd57;
 		background-color: #363636;
 	}
@@ -28,29 +29,33 @@
 		margin: 0 10px;
 	}
 	#nav-profile-pic {
-		display: inline-block;
-		margin-right: 20px;
-		height: 60px;
-		width: 60px;
-		background-color: #555;
+		display: block;
+		height: 70px;
+		width: 70px;
 		border-radius: 50%;
-		max-height: 60px;
+		max-height: 100%;
+	}
+	#nav-profile-pic:hover {
+		border: 5px solid #ffdd57;
 	}
 	.navbar-item,
 	.footer-nav-item {
 		font-weight: bold;
 	}
-	.session-nav-username {
+	#session-nav-username {
 		color: #ffdd57;
 		font-weight: 1000;
+	}
+	#session-nav-username:hover {
+		text-decoration: underline;
+		color: #session-nav-username;
 	}
 	#nav-burger {
 		color: #ffdd57;
 	}
 /** BACKGROUND IMAGES **/
 	#about-us,
-	#contact-form,
-	#sign-up-form {
+	#contact-form {
 		min-height: 400px;			
 		background-position: cover;
 	}
@@ -60,10 +65,7 @@
 	#contact-form {
 		background-image: url("../img/phbr2.jpg");	
 	}
-	#sign-up-form {
-		background-image: url("../img/phbr2.jpg");
-	}
-	#leaderboard {
+	#wrapper {
 		background-image: url("../img/phbr2.jpg");
 	}
 /** HOMEPAGE **/
@@ -72,7 +74,7 @@
 		color: #fff;
 	}
 	#about-us .container {
-		padding-top: 50px;
+		padding-top: 20px;
 	}
 	#contact-form .input {
 		width: 50%;
@@ -87,28 +89,10 @@
 	.error{
 		color:red; 
 	}
-/** PROFILE PAGE **/
-	#tile-wrapper{
-		width: 90%;
-		margin: 0 auto;
-		text-align: center;
-	}
-	#profile-picture{
-		align: center;
-	}
-	#title{
-		text-align: center;		
-	}
-	#myBar {
-	  width: 10%;
-	  height: 30px;
-	  background-color: #4CAF50;
-	  text-align: center; /* To center it horizontally (if you want) */
-	  line-height: 30px; /* To center it vertically */
-	  color: white; 
-	}
+	
 /** LEADERBOARD **/
-	#leader {
+	#leader,
+	#admin-user {
 		margin: 30px auto;
 		border-radius: 10px;
 		display: grid;
@@ -142,6 +126,130 @@
 	}
 	#leader a:hover {
 		color: #ffdd57;
+	}
+/** PROFILE PAGE **/
+	#profile {
+		padding: 0;
+		margin: 0;
+		/* height: calc(100vh - 266.5px); */
+		width: 100vw;
+	}
+	#profile-header {
+		padding-top: 20px;
+	}
+	#profile-components {
+		display: flex;
+		/* flex-wrap: wrap; */
+		justify-content: space-between;
+		align-items: center;
+		/* height: calc(100vh - 358.5px); */
+		padding-top: 30px;
+	}	
+	#profile .component {
+		/* flex-grow: 1; */
+		margin: 10px;
+		text-align: center;
+		height: auto;
+		background-color: #000;
+		border: 7px solid #ffdd57;
+		border-radius: 15px;
+	}
+	.padding-10,
+	#days-workout ul {
+		padding: 10px;
+	}
+	#dedication button,
+	#pick-foundation-radio button,
+	#workout-time button {
+		margin-top: 10px;
+	}
+	
+	
+	
+	
+	#tile-wrapper{
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	#profile-picture{
+		align: center;
+	}
+	#title{
+		text-align: center;		
+	}
+	#myBar {
+	  width: 10%;
+	  height: 30px;
+	  background-color: #4CAF50;
+	  text-align: center; /* To center it horizontally (if you want) */
+	  line-height: 30px; /* To center it vertically */
+	  color: white; 
+	}
+	#center {
+     	margin: 0%  10%;
+     	font-family: tahoma;
+     }
+    .stopwatch {
+         border:1px solid #000;
+         background-color: #eee;
+         text-align: center;
+         width:200px;
+         height: 100px;
+         overflow: hidden;
+     }
+     .stopwatch span{
+         display: block;
+         font-size: 20px;
+     }
+     .stopwatch p{
+         display: inline-block;
+         font-size: 20px;
+     }
+     .stopwatch a{
+       font-size:10px;
+     }
+     .popup {
+	    position: relative;
+	    display: inline-block;
+	    cursor: pointer;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	}	
+	.popup .popuptext {
+	    visibility: hidden;
+	    width: 160px;
+	    background-color: #555;
+	    color: #fff;
+	    text-align: center;
+	    border-radius: 6px;
+	    padding: 8px 0;
+	    position: absolute;
+	    z-index: 1;
+	    bottom: -250%;
+	    left: 50%;
+	    margin-left: -80px;
+	}	
+	.popup .show {
+	    visibility: visible;
+	    -webkit-animation: fadeIn 1s;
+	    animation: fadeIn 1s;
+	}
+/** ADMINISTRATOR PAGE **/
+	#admin-header,
+	#find-user-info {
+		padding-top: 20px;
+	}
+	#find-user-info .label {
+		color: #fff;
+	}
+	#find-user-info [type='text'] {
+		width: 30%;
+	}
+	#search-users {
+		margin-bottom: 1rem;
 	}
 /** STICKY FOOTER FORMATTING **/
 	html {
